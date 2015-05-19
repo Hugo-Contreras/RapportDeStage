@@ -1,5 +1,38 @@
-\documentclass{report}
+\documentclass[a4paper,11pt,twoside]{report}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}      
+\usepackage[francais]{babel}
+\usepackage{layout}
+\usepackage{newcent}
+\usepackage{verbatim}
+\usepackage{moreverb}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
 
 \begin{document}
-Bonjour, je lis actuellement un cours traitant de LaTeX !
+\sffamily
+
+\chapter*{Contexte}
+Le World Wide Web, littéralement la « toile (d’araignée) mondiale », communément appelé le Web permet de consulter, avec un navigateur, des pages accessibles sur des sites. Des sites il y en avait un seul en août 1991, en 2000 nous en comptions déjà 10 000 000, aujourd'hui c'est plus de 947 000 000. Ce chiffre exhorbitant ne cesse d'augmenter de jour en jour et le nombre d'entreprises concevant ces sites augmentent lui aussi inlassablement. Aujourd'hui nous faisons face à de nouvelles problématiques dans le domaine de la création d'applications WEB ou sites WEB, à savoir une complexité des fonctionnalités demandées, une compatibilité cross-plateformes (PC de bureau, tablette et mobile) mais aussi avec toutes les versions des navigateurs (IE8, IE9, Chrome, Firefox, Safari,...) et des systèmes d'exploitations (Windows, MacOS, Linux, iOS, Android,...) et enfin des performances, en terme de vitesse de chargement des pages, toujours plus rapide.\newline
+
+Dans ce contexte, Smile est une société d'experts des architectures web et des solutions open source. En France et en Europe ce sont plus de 700 collaborateurs qui opèrent dans une variété de domaines, Smile étant le premier intégrateur européen de logiciel libre.\newline
+
+Acteur engagé dans les progrès de l’Internet depuis 1995, Smile a réalisé quelques-uns des plus grands sites de l'Internet français, des sites à forte valeur ajoutée et à forte audience. Smile a également été choisie par les plus grandes entreprises françaises pour concevoir, réaliser et maintenir des applicatifs Intranet stratégiques, servant des centaines d'utilisateurs sur des milliers de transactions. On notera par exemple quelques grands clients comme le Ministère de la Culture, la Société Générale, Eiffage Immobilier, Dassault Systèmes, Eurosport, Krys, Carrefour,...\newline
+
+A Bordeaux ce sont une quarentaine de collaborateurs, majoritairement ingénieurs, qui développent des applications WEB utilisant les CMS Open Source (eZ Publish, Drupal), la solution de e-commerce Magento, mais aussi l’ensemble des solutions Open Source portées par Smile. Récemment le développent de projets full-stack Symfony 2 est venu s'ajouter aux missions de l'agence de Bordeaux notamment à cause de l'importance que prend ce framework PHP sur le marché.\newline
+
+Qui dit développement, dit language informatique, à Bordeaux il y a majoritairement un language utilisé à savoir le PHP, même si des projets en Java, .Net ont déjà été réalisé. En plus de ceux-ci, sont utilisés au quotidien les languages basiques du WEB à savoir HTML5, CSS3, Javascript et toutes les variantes ou framework qui y sont liés. Pour l'environnement de travail toutes les machines des développeurs sont équipés de Linux avec une distribution spécifique à Smile. Chacun est libre d'y installer tous les outils nécessaires à son travail de développement. 
+
+%nombre d'espaces par tabulation
+\begin{verbatimtab}[4] 
+jQuery('.simple-text + input').blur(function(){
+            currentvalue = jQuery(this).val();
+            jQuery('.hidden label').each(function() {
+                if (currentinput == jQuery(this).text()) {
+                    jQuery(this).next('input').val(currentvalue);
+                }
+            });
+        });
+\end{verbatimtab}
+
 \end{document}
