@@ -10,36 +10,71 @@
 \usepackage{moreverb}
 \usepackage{titlesec}
 \usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+%Changement du format des titres des chapitres
 \titleformat{\chapter}[hang]{\bf\huge}{\thechapter}{2pc}{}
+
 \begin{document}
+
+%Font sans empattement 
 \sffamily
+
 %Insertion page de garde INSA
 \includegraphics{chemin de l'image}
+
+%Saut de page
 \clearpage
+
 \chapter*{Introduction}
+En tant que féru de nouvelles technologies, j'ai recherché un stage dans une entreprise et surtout un secteur qui saurait me combler. Plusieurs types de PFE pouvaient convenir à mes attentes et je souhaitais élargir mes horizons et continuer d'agrandir mon bagage technique. Ayant une attirance plus particulière pour les technologies du Web, j'ai accepté la proposition de Smile Sud-Ouest en tant que développeur d'applications Web. En effet une SSII offre la possibilité d'acquérir beaucoup de connaissances rapidement et d'engranger de l'expérience à travers des projets divers et variés.\newline
+
+L'ensemble des technologies gravitant autour du Web étant en constantes évolution je savais que ce stage était pour moi l'occasion d'exercer dans un environnement qui me passione. De plus, dès les entretiens j'ai ressenti la bonne ambiance et la convivialité dans cette agence, ceci a grandement participé à asseoir ce choix de PFE.\newline 
+
+Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de mes missions au sein de Smile pour les six mois de stage. Dans une première partie, je présenterai le groupe ainsi que sa position dans le secteur. Je porterai une attention particulière à l'agence Bordeaux où j'ai travaillé ainsi qu'aux diverses missions qui m'ont été proposées. Dans un second temps, j’aborderai les différents projets auxquels j'ai participé, leurs réalisations ainsi que les difficultés rencontrées et leurs solutions. Finalement, la dernière partie fera le bilan de ces six mois de stage et s'ouvrira sur les futurs projets en développement Web de l’entreprise.
+\addcontentsline{toc}{chapter}{Introduction}%Ajout de l'élément dans le sommaire
+
 \chapter*{Remerciements}
+\addcontentsline{toc}{chapter}{Remerciements}%Ajout de l'élément dans le sommaire
+
 %Table des matières
 \tableofcontents
+
 \chapter{Présentation de l'entreprise}
-\section{Contexte}
-Le World Wide Web, littéralement la « toile (d’araignée) mondiale », communément appelé le Web permet de consulter, avec un navigateur, des pages accessibles sur des sites. Des sites il y en avait un seul en août 1991, en 2000 nous en comptions déjà 10 000 000, aujourd'hui c'est plus de 947 000 000. Ce chiffre exorbitant ne cesse d'augmenter de jour en jour et le nombre d'entreprises concevant ces sites augmentent lui aussi inlassablement. Aujourd'hui nous faisons face à de nouvelles problématiques dans le domaine de la création d'applications WEB ou sites WEB, à savoir une complexité des fonctionnalités demandées, une compatibilité cross-plateformes (PC de bureau, tablette et mobile) mais aussi avec toutes les versions des navigateurs (IE8, IE9, Chrome, Firefox, Safari,...) et des systèmes d'exploitations (Windows, MacOS, Linux, iOS, Android,...) et enfin des performances, en terme de vitesse de chargement des pages, toujours plus rapide.
-\section{Groupe Smile}
-Dans ce contexte, Smile est une société d'experts des architectures web et des solutions open source. En France et en Europe ce sont plus de 700 collaborateurs qui opèrent dans une variété de domaines, Smile étant le premier intégrateur européen de logiciel libre.\newline
+  \section{Contexte}
+  Le World Wide Web, littéralement la « toile (d’araignée) mondiale », communément appelé le Web permet de consulter, avec un navigateur, des pages accessibles sur des sites. Des sites il y en avait un seul en août 1991, en 2000 nous en comptions déjà 10 000 000, aujourd'hui c'est plus de 947 000 000. Ce chiffre exorbitant ne cesse d'augmenter de jour en jour et le nombre d'entreprises concevant ces sites augmentent lui aussi inlassablement. Aujourd'hui nous faisons face à de nouvelles problématiques dans le domaine de la création d'applications Web ou sites Web, à savoir une complexité des fonctionnalités demandées, une compatibilité cross-plateformes (PC de bureau, tablette et mobile) mais aussi avec toutes les versions des navigateurs (IE8, IE9, Chrome, Firefox, Safari,...) et des systèmes d'exploitations (Windows, MacOS, Linux, iOS, Android,...) et enfin des performances, en terme de vitesse de chargement des pages, toujours plus rapide.
+  \section{Groupe Smile}
+  Dans ce contexte, Smile est une société d'experts des architectures web et des solutions open source. En France et en Europe ce sont plus de 700 collaborateurs qui opèrent dans une variété de domaines, Smile étant le premier intégrateur européen de logiciel libre.\newline
 
-Acteur engagé dans les progrès de l’Internet depuis 1995, Smile a réalisé quelques-uns des plus grands sites de l'Internet français, des sites à forte valeur ajoutée et à forte audience. Smile a également été choisie par les plus grandes entreprises françaises pour concevoir, réaliser et maintenir des applicatifs Intranet stratégiques, servant des centaines d'utilisateurs sur des milliers de transactions. On notera par exemple quelques grands clients comme le Ministère de la Culture, la Société Générale, Eiffage Immobilier, Dassault Systèmes, Eurosport, Krys, Carrefour,...
-\section{Agence de Bordeaux}
-A Bordeaux ce sont une quarentaine de collaborateurs, majoritairement ingénieurs, qui développent des applications WEB utilisant les CMS Open Source (eZ Publish, Drupal), la solution de e-commerce Magento, mais aussi l’ensemble des solutions Open Source portées par Smile. Récemment le développent de projets full-stack Symfony 2 est venu s'ajouter aux missions de l'agence de Bordeaux notamment à cause de l'importance que prend ce framework PHP sur le marché.\newline
+  Acteur engagé dans les progrès de l’Internet depuis 1995, Smile a réalisé quelques-uns des plus grands sites de l'Internet français, des sites à forte valeur ajoutée et à forte audience. Smile a également été choisie par les plus grandes entreprises françaises pour concevoir, réaliser et maintenir des applicatifs Intranet stratégiques, servant des centaines d'utilisateurs sur des milliers de transactions. On notera par exemple quelques grands clients comme le Ministère de la Culture, la Société Générale, Eiffage Immobilier, Dassault Systèmes, Eurosport, Krys, Carrefour,...
+  \section{Agence de Bordeaux}
+  A Bordeaux ce sont une quarentaine de collaborateurs, majoritairement ingénieurs, qui développent des applications Web utilisant les CMS Open Source (eZ Publish, Drupal), la solution de e-commerce Magento, mais aussi l’ensemble des solutions Open Source portées par Smile. Récemment le développent de projets full-stack Symfony 2 est venu s'ajouter aux missions de l'agence de Bordeaux notamment à cause de l'importance que prend ce framework PHP sur le marché.\newline
 
-Qui dit développement, dit language informatique, à Bordeaux il y a majoritairement un language utilisé à savoir le PHP, même si des projets en Java, .Net ont déjà été réalisé. En plus de ceux-ci, sont utilisés au quotidien les languages basiques du WEB à savoir HTML5, CSS3, Javascript et toutes les variantes ou framework qui y sont liés. Pour l'environnement de travail toutes les machines des développeurs sont équipés de Linux avec une distribution spécifique à Smile. Chacun est libre d'y installer tous les outils nécessaires à son travail de développement. 
-\section{Mes missions au sein de Smile}
+  Qui dit développement, dit language informatique, à Bordeaux il y a majoritairement un language utilisé à savoir le PHP, même si des projets en Java, .Net ont déjà été réalisé. En plus de ceux-ci, sont utilisés au quotidien les languages basiques du Web à savoir HTML5, CSS3, Javascript et toutes les variantes ou framework qui y sont liés. Pour l'environnement de travail toutes les machines des développeurs sont équipés de Linux avec une distribution spécifique à Smile. Chacun est libre d'y installer tous les outils nécessaires à son travail de développement. 
+  \section{Mes missions au sein de Smile}
 
-\chapter{Développement d'applications WEB à travers différents projets}
-\section{Dedietrich thermique}
-\section{Banque Française Mutualiste (BFM)}
+\chapter{Développement d'applications Web à travers différents projets}
+  \section{Dedietrich thermique}
+    \subsection*{Etat de l'art}
+    \addcontentsline{toc}{subsection}{Etat de l'art}%Ajout de l'élément dans le sommaire
+    \subsection*{Mes objectifs}
+    \addcontentsline{toc}{subsection}{Mes objectifs}%Ajout de l'élément dans le sommaire
+    \subsection*{Mes réalisations}
+    \addcontentsline{toc}{subsection}{Mes réalisations}%Ajout de l'élément dans le sommaire
+    \subsection*{Bilan du projet}
+    \addcontentsline{toc}{subsection}{Bilan du projet}%Ajout de l'élément dans le sommaire
+  \section{Banque Française Mutualiste (BFM)}
+    \subsection*{Etat de l'art}
+    \addcontentsline{toc}{subsection}{Etat de l'art}%Ajout de l'élément dans le sommaire
+    \subsection*{Mes objectifs}
+    \addcontentsline{toc}{subsection}{Mes objectifs}%Ajout de l'élément dans le sommaire
+    \subsection*{Mes réalisations}
+    \addcontentsline{toc}{subsection}{Mes réalisations}%Ajout de l'élément dans le sommaire
+    \subsection*{Bilan du projet}
+    
 
 \chapter{Conclusion}
-\section{Enseignements et bénéfices}
-\section{Les projets à venir}
+  \section{Enseignements et bénéfices}
+  \section{Les projets à venir}
 
 \chapter*{Annexes}
 
