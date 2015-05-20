@@ -1,0 +1,14 @@
+Participation à la conception, au développement et aux tests d’une application J2EE pour la banque de Renault
+BABIAUD Charles-Henri
+Informatique
+
+RCI Banque, banque captive de Renault a démarré il y a plusieurs années un projet de grande envergure sur le financement lors de la vente d’automobiles, alors déjà basé sur une application déjà en fonctionnement depuis plusieurs années. Ceci a donné l’implémentation d’une application opérationnelle en Autriche, en Irlande, en Suisse et en Allemagne. RCI Banque United Kingdom a alors pris la décision de faire une refonte de l’application existante dans ces pays pour l’adapter à la Grande Bretagne. Le projet, à livrer pour juillet 2013, est maintenant dans sa dernière phase de développement. Ce projet est le premier projet réalisé par Open, pour un client anglais. L’équipe dans laquelle le stage se déroule est constituée d’environ 13 personnes. Le travail à réaliser consiste à : -Rédiger des documentations techniques (dossier d’architecture technique, d’exploitation, …) et effectuer un travail d’analyse -Résoudre des anomalies -Rechercher des composants déjà existants -Rédiger des spécifications techniques -Développer des modules dans l’application (dont un module de remboursement anticipé partiel d’un crédit) -Recetter sur l’application -Participer au pilotage du projet
+
+Type de document : Mémoire
+Entreprise : OPEN – Centre de services de Nantes
+Date : 01/07/2013
+Sujet :
+Progiciels -- Développement
+Progiciels -- Tests
+Mots clés :
+Calculs de financement
