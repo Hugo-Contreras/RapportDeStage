@@ -9,18 +9,17 @@
 \usepackage{verbatim}
 \usepackage{moreverb}
 \usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{color}
 \usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\definecolor{vert}{HTML}{729928}
 
 %Changement du format des titres des chapitres
-\titleformat{\chapter}[hang]{\bf\huge}{\thechapter}{2pc}{}
+\titleformat{\chapter}[hang]{\huge\textcolor{vert}}{\thechapter}{2pc}{}
 
 \begin{document}
-
 %Font sans empattement 
 \sffamily
-
-%Insertion page de garde INSA
-\includegraphics{chemin de l'image}
 
 %Saut de page
 \clearpage
@@ -90,8 +89,8 @@ Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de
   
 \chapter{Développement d'applications Web à travers différents projets}
   \section{Dedietrich thermique}
-    \subsection*{Etat de l'art}
-    \addcontentsline{toc}{subsection}{Etat de l'art}%Ajout de l'élément dans le sommaire
+    \subsection*{Présentation du projet et état de l'art}
+    \addcontentsline{toc}{subsection}{Présentation du projet et état de l'art}%Ajout de l'élément dans le sommaire
     \subsection*{Mes objectifs}
     \addcontentsline{toc}{subsection}{Mes objectifs}%Ajout de l'élément dans le sommaire
     \subsection*{Mes réalisations}
@@ -99,8 +98,8 @@ Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de
     \subsection*{Bilan du projet}
     \addcontentsline{toc}{subsection}{Bilan du projet}%Ajout de l'élément dans le sommaire
   \section{Banque Française Mutualiste (BFM)}
-    \subsection*{Etat de l'art}
-    \addcontentsline{toc}{subsection}{Etat de l'art}%Ajout de l'élément dans le sommaire
+    \subsection*{Présentation du projet et état de l'art}
+    \addcontentsline{toc}{subsection}{Présentation du projet et état de l'art}%Ajout de l'élément dans le sommaire
     \subsection*{Mes objectifs}
     \addcontentsline{toc}{subsection}{Mes objectifs}%Ajout de l'élément dans le sommaire
     \subsection*{Mes réalisations}
