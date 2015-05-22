@@ -4,32 +4,41 @@
 \usepackage[T1]{fontenc}      
 \usepackage[francais]{babel}
 \addto\captionsfrench{\renewcommand{\chaptername}{Partie}}
-\usepackage{layout}
 \usepackage{graphicx}
 \usepackage{newcent}
 \usepackage{verbatim}
 \usepackage{moreverb}
-\usepackage{titlesec}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
 \usepackage{xcolor}
 \usepackage{color}
-\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-
 %Définition des couleurs
 \definecolor{vert}{HTML}{729928}
-\definecolor{vert-fonce}{HTML}{59781f}
+\definecolor{vert-fonce}{RGB}{89,120,31}
+\definecolor{soft-dark}{RGB}{45,60,16}
 \definecolor{vert-clair}{HTML}{99cb38}
 
-%Définition de l'entête des pages
-\renewcommand{\headrulewidth}{0pt}
-\fancyhead[C]{{\fontfamily{pag}\selectfont\scriptsize\color{vert-fonce}{\textsc{\leftmark}}}}
-\fancyhead[L]{}
-\fancyhead[R]{}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\fancypagestyle{plain}{
+  \fancyhf{}
+  %Définition de l'entête des pages
+  \renewcommand{\headrulewidth}{0pt}
+  \fancyhead[C]{{\fontfamily{pag}\selectfont\scriptsize\color{vert-fonce}{\textsc{\leftmark}}}}
+  \fancyhead[L]{}
+  \fancyhead[R]{}
+  %Définition du pied des pages
+  \fancyfoot[C]{}
+  \fancyfoot[L]{}
+  \fancyfoot[R]{\fontfamily{pag}\selectfont\small\color{vert-fonce}{\textsc{| \thepage/\pageref{LastPage}}}}
+}
+\pagestyle{plain}
 
+\usepackage{titlesec}
 %Changement du format des titres des chapitres
-\titleformat{\chapter}[hang]{\huge\textcolor{vert}}{\thechapter}{2pc}{}
-\titleformat{\section}[hang]{\LARGE\textcolor{vert-clair}}{\thesection}{2pc}{}
+\titleformat{\chapter}[hang]{\huge\textcolor{vert}}{\thechapter}{2pc}{}[]
+\titleformat{\section}[hang]{\LARGE\textcolor{vert-clair}}{\thesection}{2pc}{}[]
+\titleformat{\subsection}[hang]{\Large\textcolor{soft-dark}}{\thesubsection}{2pc}{}[]
 
 \begin{document}
 %Font sans empattement 
@@ -39,9 +48,9 @@
 \clearpage
 
 \chapter*{Introduction}
-En tant que féru de nouvelles technologies, j'ai recherché un stage dans une entreprise et surtout un secteur qui saurait me combler. Plusieurs types de PFE pouvaient convenir à mes attentes et je souhaitais élargir mes horizons et continuer d'agrandir mon bagage technique. Ayant une attirance plus particulière pour les technologies du Web, j'ai accepté la proposition de Smile Sud-Ouest en tant que développeur d'applications Web. En effet une SSII offre la possibilité d'acquérir beaucoup de connaissances rapidement et d'engranger de l'expérience à travers des projets divers et variés.\newline
+En tant que féru de nouvelles technologies, j'ai recherché un stage dans une entreprise et surtout un secteur qui saurait me combler. Plusieurs types de PFE\footnote{Projet de Fin d'Etude} pouvaient convenir à mes attentes et je souhaitais élargir mes horizons et continuer d'agrandir mon bagage technique. Ayant une attirance plus particulière pour les technologies du Web\footnote{Abréviation pour World Wide Web}, j'ai accepté la proposition de Smile Sud-Ouest en tant que développeur d'applications Web. En effet une SSII\footnote{Société de Services en Ingénierie Informatique, maintenant appelé Entreprise de Services du Numérique (ESN)} offre la possibilité d'acquérir beaucoup de connaissances rapidement et d'engranger de l'expérience à travers des projets divers et variés.\newline
 
-L'ensemble des technologies gravitant autour du Web étant en constantes évolution je savais que ce stage était pour moi l'occasion d'exercer dans un environnement qui me passione. De plus, dès les entretiens j'ai ressenti la bonne ambiance et la convivialité dans cette agence, ceci a grandement participé à asseoir ce choix de PFE. Le fait que Smile soit une entreprise de taille conséquente a ausssi contribué dans mon choix car ayant réalisé mon stage de troisième année dans une PME comptant seulement 4 employés, j'avais à coeur de découvrir ce qu'était un grand groupe.\newline 
+L'ensemble des technologies gravitant autour du Web étant en constantes évolution je savais que ce stage était pour moi l'occasion d'exercer dans un environnement qui me passione. De plus, dès les entretiens j'ai ressenti la bonne ambiance et la convivialité dans cette agence, ceci a grandement participé à asseoir ce choix de PFE. Le fait que Smile soit une entreprise de taille conséquente a ausssi contribué dans mon choix car ayant réalisé mon stage de troisième année dans une PME\footnote{Petite et Moyenne Entreprise} comptant seulement 4 employés, j'avais à coeur de découvrir ce qu'était un grand groupe.\newline 
 
 Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de mes missions au sein de Smile pour les six mois de stage. Dans une première partie, je présenterai le groupe ainsi que sa position dans le secteur. Je porterai une attention particulière à l'agence Bordeaux où j'ai travaillé ainsi qu'aux diverses missions qui m'ont été proposées. Dans un second temps, j’aborderai les différents projets auxquels j'ai participé, leurs réalisations ainsi que les difficultés rencontrées et leurs solutions. Finalement, la dernière partie fera le bilan de ces six mois de stage et s'ouvrira sur les futurs projets en développement Web de l’entreprise.
 \addcontentsline{toc}{chapter}{Introduction}%Ajout de l'élément dans le sommaire
@@ -57,9 +66,9 @@ Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de
   Le World Wide Web, littéralement la « toile (d’araignée) mondiale », communément appelé le Web permet de consulter, avec un navigateur, des pages accessibles sur des sites. Des sites il y en avait un seul en août 1991, en 2000 nous en comptions déjà 10 000 000, aujourd'hui c'est plus de 947 000 000. Ce chiffre exorbitant ne cesse d'augmenter de jour en jour et le nombre d'entreprises concevant ces sites augmentent lui aussi inlassablement. Aujourd'hui nous faisons face à de nouvelles problématiques dans le domaine de la création d'applications Web ou sites Web, à savoir une complexité des fonctionnalités demandées, une compatibilité cross-plateformes (PC de bureau, tablette et mobile) mais aussi avec toutes les versions des navigateurs (IE8, IE9, Chrome, Firefox, Safari,...) et des systèmes d'exploitations (Windows, MacOS, Linux, iOS, Android,...) et enfin des performances, en terme de vitesse de chargement des pages, toujours plus rapide.
   
   \section{Groupe Smile}
-  Dans ce contexte, Smile est une société d'experts des architectures web et des solutions open source fondée en 1991. Cependant ce n'est qu'à partir de 2001 que Smile commence à construire son expertise des solutions open source : un choix d’avenir que beaucoup de ses concurrents n’osent pas alors entreprendre, mais qui s'avèrera être un choix payant. En France et dans le monde ce sont plus de 700 collaborateurs qui opèrent dans une variété de domaines, Smile étant le premier intégrateur européen de logiciel libre.Dans l'hexagone ce sont 8 agences (Paris, Lyon, Nantes, Bordeaux, Montpellier, Marseille, Lille et Grenoble) qui se partagent les différents projets, auxquels s'ajoutent les 8 autres locaux à l'étranger (Amsterdam, Bruxelles, Genève, Zurich, Casablanca, Kiev, Moscou et Abidjan), pour arriver à un groupe comptant 16 infrastructures à travers le monde.\newline
+  Dans ce contexte, Smile est une société d'experts des architectures web et des solutions open source fondée en 1991. Cependant ce n'est qu'à partir de 2001 que Smile commence à construire son expertise des solutions open source\footnote{Désigne un logiciel dans lequel le code source est à la disposition du grand public} : un choix d’avenir que beaucoup de ses concurrents n’osent pas alors entreprendre, mais qui s'avèrera être un choix payant. En France et dans le monde ce sont plus de 700 collaborateurs qui opèrent dans une variété de domaines, Smile étant le premier intégrateur européen de logiciel libre.Dans l'hexagone ce sont 8 agences (Paris, Lyon, Nantes, Bordeaux, Montpellier, Marseille, Lille et Grenoble) qui se partagent les différents projets, auxquels s'ajoutent les 8 autres locaux à l'étranger (Amsterdam, Bruxelles, Genève, Zurich, Casablanca, Kiev, Moscou et Abidjan), pour arriver à un groupe comptant 16 infrastructures à travers le monde.\newline
 
-  Acteur engagé dans les progrès de l’Internet depuis 1995, Smile a réalisé quelques-uns des plus grands sites de l'Internet français, des sites à forte valeur ajoutée et à forte audience. Smile a également été choisie par les plus grandes entreprises françaises pour concevoir, réaliser et maintenir des applicatifs Intranet stratégiques, servant des centaines d'utilisateurs sur des milliers de transactions. On notera par exemple quelques grands clients comme le Ministère de la Culture, la Société Générale, Eiffage Immobilier, Dassault Systèmes, Eurosport, Krys, Carrefour,...\newline
+  Acteur engagé dans les progrès de l’Internet\footnote{Réseau informatique mondial accessible au public comportant des services variés comme le Web notamment} depuis 1995, Smile a réalisé quelques-uns des plus grands sites de l'Internet français, des sites à forte valeur ajoutée et à forte audience. Smile a également été choisie par les plus grandes entreprises françaises pour concevoir, réaliser et maintenir des applicatifs Intranet stratégiques, servant des centaines d'utilisateurs sur des milliers de transactions. On notera par exemple quelques grands clients comme le Ministère de la Culture, la Société Générale, Eiffage Immobilier, Dassault Systèmes, Eurosport, Krys, Carrefour,...\newline
   
   On trouve chez Smile plusieurs corps de métiers :\newline
   \begin{description}
@@ -82,7 +91,7 @@ Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de
     \item Expert technique
     \item Chef de projet fonctionnel
     \item Chef de projet technique
-    \item Consultant expert veille IT
+    \item Consultant expert veille IT\footnote{Technologies de l'information et de la communication}
     \item Directeur de projet
     \newline
   \end{itemize}
@@ -90,16 +99,16 @@ Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de
   Je reviendrai par la suite sur le rôle de l'IED et du développeur puisque cela correspond à mes fonctions en tant que stagiaire au sein de Smile.
   
   \section{Agence de Bordeaux}
-  A Bordeaux ce sont une quarentaine de collaborateurs, majoritairement ingénieurs, qui développent des applications Web utilisant les CMS Open Source (eZ Publish, Drupal), la solution de e-commerce Magento, mais aussi l’ensemble des solutions Open Source portées par Smile. Récemment le développent de projets full-stack Symfony 2 est venu s'ajouter aux missions de l'agence de Bordeaux notamment du au fait de l'importance que prend ce framework PHP sur le marché.\newline
+  A Bordeaux ce sont une quarentaine de collaborateurs, majoritairement ingénieurs, qui développent des applications Web utilisant les CMS\footnote{Content Management System, est un site web disposant de fonctionnalités de publication et offrant en particulier une interface d'administration permettant à un administrateur de site de créer ou organiser du contenu} open source (eZ Publish, Drupal), la solution de e-commerce Magento, mais aussi l’ensemble des solutions Open Source portées par Smile. Récemment le développent de projets Symfony 2\footnote{Framework libre et français écrit en PHP 5 destiné majoritairement aux professionnels du développement permettant de faciliter et d’accélérer la création d'un site web} est venu s'ajouter aux missions de l'agence de Bordeaux notamment du au fait de l'importance que prend ce framework\footnote{En programmation informatique, un framework ou structure logicielle est un ensemble cohérent de composants logiciels structurels, qui sert à créer les fondations ainsi que les grandes lignes de tout ou d’une partie d'un logiciel} PHP\footnote{Langage de programmation libre principalement utilisé pour produire des pages Web dynamiques. PHP est un langage orienté objet et a permis de créer un grand nombre de sites web célèbres, comme Facebook, YouTube, Wikipedia, Google,... Il est aujourd'hui considéré comme la base de la création des sites Internet dits dynamiques} sur le marché.\newline
 
-  Qui dit développement, dit language informatique, à Bordeaux il y a majoritairement un language utilisé à savoir le PHP, même si des projets en Java, .Net ont déjà et sont encore réalisé. En plus de ceux-ci, sont utilisés au quotidien les languages basiques du Web à savoir HTML5, CSS3, Javascript et toutes les variantes ou framework qui y sont liés. Quand à l'environnement de travail, toutes les machines des développeurs sont équipés de Linux avec une distribution spécifique à Smile. Chacun est libre d'y installer, en plus des logiciels de bases fournis, tous les outils nécessaires à son travail de développement. Les locaux sont organisés en open-space afin de faciliter les échanges entre collaborateurs et un regroupement par projet est mis en place toujours dans le même but.
+  Qui dit développement, dit language informatique, à Bordeaux il y a majoritairement un language utilisé à savoir le PHP, même si des projets en Java\footnote{ Langage de programmation informatique orienté objet détenu par la société Oracle}, .Net\footnote{Ensemble de produits et de technologies informatiques de l'entreprise Microsoft pour rendre des applications facilement portables sur Internet} ont déjà et sont encore réalisés. En plus de ceux-ci, sont utilisés au quotidien les languages basiques du Web à savoir HTML5\footnote{HyperText Markup Language 5, langage permettant notamment le développement d'applications Web}, CSS3\footnote{Cascading Style Sheets, langage qui décrit la présentation des documents HTML (couleur, mise en page,...)}, JavaScript\footnote{Langage de programmation de scripts principalement employé dans les pages web interactives} et toutes les variantes ou framework qui y sont liés (jQuery, Sass,...). Quand à l'environnement de travail, toutes les machines des développeurs sont équipés de Linux\footnote{Nom couramment donné à tout système d'exploitation libre fonctionnant avec le noyau Linux} avec une distribution spécifique à Smile. Chacun est libre d'y installer, en plus des logiciels de bases fournis, tous les outils nécessaires à son travail de développement. Les locaux sont organisés en open-space afin de faciliter les échanges entre collaborateurs et un regroupement par projet est mis en place toujours dans le même but.
   
   \section{Mes missions au sein de Smile}
-  Ma première mission au sein de Smile a été d'installé et de mettre en place mon poste de travail, cela est passé par l'installation du Linux custom sur ma machine ainsi que des logiciels nécessaires au développement. J'ai notamment utilisé PhpStorm comme IDE ainsi que le navigateur Chrome de Google pour débuguer mes pages WEB. En plus de cela j'ai eu besoin d'outils comme VirtualBox pour simuler des environnements Windows à des fins de test de compatibilité, ou encore Meld un logiciel de comparaison de fichier très utile pour détecter des erreurs dans le code. S'en est suivi une période d'autoformation sur les différentes technologies utiliées par l'agence, à savoir Drupal, Magento et EzPublish.\newline 
+  Ma première mission au sein de Smile a été d'installé et de mettre en place mon poste de travail, cela est passé par l'installation du Linux custom sur ma machine ainsi que des logiciels nécessaires au développement. J'ai notamment utilisé PhpStorm comme IDE\footnote{Integrated Development Environment, un environnement de développement est un ensemble d'outils pour augmenter la productivité des programmeurs qui développent des logiciels} ainsi que le navigateur Chrome de Google pour débuguer mes pages WEB. En plus de cela j'ai eu besoin d'outils comme VirtualBox pour simuler des environnements Windows à des fins de test de compatibilité, ou encore Meld un logiciel de comparaison de fichier très utile pour détecter des erreurs dans le code. S'en est suivi une période d'autoformation sur les différentes technologies utiliées par l'agence, à savoir Drupal, Magento et EzPublish.\newline 
   
   J'ai par la suite été placé sous la tutelle d'un chef de projet avec qui j'ai commencé le développement pour des clients sur des projets existants. Il s'agit de projets de Tierce maintenance applicative (TMA), les clients demandent des évolutions ou des corrections sur leurs sites et nous nous chargeons de les effectuer, de les tester puis de leur livrer et de vérifier avec eux que cela leur convient et répond à leurs attentes. Dans les missions qui m'étaient confiées j'avais plusieurs aspect du métier à mener, à savoir, la relation avec le client, l'appeler discuter avec lui de l'avancement et des fonctions souhaitées concernant sa demande. Mais aussi le développement en utilisant différents languages, différentes technologies et travailler sur des sites de natures et aux objectifs différents.\newline 
   
-  Dans tous les cas j'avais un gros travail d'autoformation, dû au fait que je travaillais sur des technologies que nous n'avions pas abordé en cours à l'INSA. En plus de ça, des formations internes étaient proposées et c'était un plus pour moi d'y participer afin de faire grossir mon bagage technique et ainsi devenir encore plus polyvalent. En effet la polyvalence est aussi un objectif chez Smile car tous les développeurs doivent être capable de gérer le front-end, le back-end et les aspects réseaux liés au projet. L'idée étant d'avoir des programmeurs full-stack et acquérir une grande adaptabilité, ce qui est un plus quand on débute sur le marché de l'emploi.
+  Dans tous les cas j'avais un gros travail d'autoformation, dû au fait que je travaillais sur des technologies que nous n'avions pas abordé en cours à l'INSA. En plus de ça, des formations internes étaient proposées et c'était un plus pour moi d'y participer afin de faire grossir mon bagage technique et ainsi devenir encore plus polyvalent. En effet la polyvalence est aussi un objectif chez Smile car tous les développeurs doivent être capable de gérer le front-end\footnote{Partie du site visible par les utilisateurs, il s'agit de l'interface entre l'utilisateur et le back-end}, le back-end\footnote{Partie du site non visible par les utilisateurs et s'exécutant côté serveur} et les aspects réseaux liés au projet. L'idée étant d'avoir des programmeurs full-stack\footnote{Développeur maîtrisant les principales technologies et les principaux langages de programmation actuellement utilisés afin d'intervenir à la fois sur le frond-end et le back-end des sites Internet} et acquérir une grande adaptabilité, ce qui est un plus quand on débute sur le marché de l'emploi.
   
 \chapter{Développement d'applications Web à travers différents projets}
   \section{Dedietrich thermique}
