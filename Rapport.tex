@@ -47,6 +47,12 @@
 %Changement du comportement de la mise en avant d'un élément
 \renewcommand{\emph}{\bfseries}
 
+%Changement aspect du label dans les descriptions
+\usepackage{enumitem}
+\setlist[description]{
+  font={\bfseries\sffamily}
+}
+
 \begin{document}
 %Font sans empattement 
 \sffamily
@@ -55,6 +61,7 @@
 \clearpage
 
 \chapter*{Introduction}
+\thispagestyle{\chead{}}
 En tant que féru de nouvelles technologies, j'ai recherché un stage dans une entreprise et surtout un secteur qui saurait me combler. Plusieurs types de PFE\footnote{Projet de Fin d'Etude} pouvaient convenir à mes attentes et je souhaitais élargir mes horizons et continuer d'agrandir mon bagage technique. Ayant une attirance plus particulière pour les technologies du Web\footnote{Abréviation pour World Wide Web}, j'ai accepté la proposition de Smile Sud-Ouest en tant que développeur d'applications Web. En effet une SSII\footnote{Société de Services en Ingénierie Informatique, maintenant appelé Entreprise de Services du Numérique (ESN)} offre la possibilité d'acquérir beaucoup de connaissances rapidement et d'engranger de l'expérience à travers des projets divers et variés.\newline
 
 L'ensemble des technologies gravitant autour du Web étant en constantes évolution je savais que ce stage était pour moi l'occasion d'exercer dans un environnement qui me passione. De plus, dès les entretiens j'ai ressenti la bonne ambiance et la convivialité dans cette agence, ceci a grandement participé à asseoir ce choix de PFE. Le fait que Smile soit une entreprise de taille conséquente a ausssi contribué dans mon choix car ayant réalisé mon stage de troisième année dans une PME\footnote{Petite et Moyenne Entreprise} comptant seulement 4 employés, j'avais à coeur de découvrir ce qu'était un grand groupe.\newline 
@@ -63,10 +70,12 @@ Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de
 \addcontentsline{toc}{chapter}{Introduction}%Ajout de l'élément dans le sommaire
 
 \chapter*{Remerciements}
+\thispagestyle{\chead{}}
 \addcontentsline{toc}{chapter}{Remerciements}%Ajout de l'élément dans le sommaire
 
 %Table des matières
 \tableofcontents
+\thispagestyle{\chead{}}
 
 \chapter{Présentation de l'entreprise}
   \section{Contexte}
@@ -87,6 +96,7 @@ Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de
     \item[Agence Digitale] L'agence Digitale est une équipe qui travaille pour les clients de Smile à la refonte ou à l’élaboration de leur identité visuelle : e- Marketing, charte graphique, accessibilité, interactivité et animation,... 
     \item[Administratif] Le pôle administratif recouvre des métiers aussi nombreux que variés : comptabilité, contrôle de gestion, finances mais aussi ressources humaines et recrutement ou encore communication et marketing.
     \newline
+    
   \end{description}
   
   Pour le pôle ingéniérie qui nous intéresse plus particulièrement on trouve de nombreux métiers là aussi, je me contenterai de les siter sans les détailler un à un :\newline
@@ -101,6 +111,7 @@ Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de
     \item Consultant expert veille IT\footnote{Technologies de l'information et de la communication}
     \item Directeur de projet
     \newline
+    
   \end{itemize}
   
   Je reviendrai par la suite sur le rôle de l'IED et du développeur puisque cela correspond à mes fonctions en tant que stagiaire au sein de Smile.
@@ -112,6 +123,8 @@ Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de
   
   \section{Mes missions au sein de Smile}
   Ma première mission au sein de Smile a été d'installé et de mettre en place mon poste de travail, cela est passé par l'installation du Linux custom sur ma machine ainsi que des logiciels nécessaires au développement. J'ai notamment utilisé PhpStorm comme IDE\footnote{Integrated Development Environment, un environnement de développement est un ensemble d'outils pour augmenter la productivité des programmeurs qui développent des logiciels} ainsi que le navigateur Chrome de Google pour débuguer mes pages WEB. En plus de cela j'ai eu besoin d'outils comme VirtualBox pour simuler des environnements Windows à des fins de test de compatibilité, ou encore Meld un logiciel de comparaison de fichier très utile pour détecter des erreurs dans le code. S'en est suivi une période d'autoformation sur les différentes technologies utiliées par l'agence, à savoir Drupal, Magento et EzPublish.\newline 
+  
+  LXC - SVN - Redmine - Gescom
   
   J'ai par la suite été placé sous la tutelle d'un chef de projet avec qui j'ai commencé le développement pour des clients sur des projets existants. Il s'agit de projets de Tierce maintenance applicative (TMA), les clients demandent des évolutions ou des corrections sur leurs sites et nous nous chargeons de les effectuer, de les tester puis de leur livrer et de vérifier avec eux que cela leur convient et répond à leurs attentes. Dans les missions qui m'étaient confiées j'avais plusieurs aspect du métier à mener, à savoir, la relation avec le client, l'appeler discuter avec lui de l'avancement et des fonctions souhaitées concernant sa demande. Mais aussi le développement en utilisant différents languages, différentes technologies et travailler sur des sites de natures et aux objectifs différents.\newline 
   
@@ -133,6 +146,14 @@ Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de
       \end{itemize}
     \addcontentsline{toc}{subsection}{Mes objectifs}%Ajout de l'élément dans le sommaire
     \subsection*{Mes réalisations}
+      \begin{description}
+
+	\item[Copie de l'arborescence] J'ai commencé par copié l'arborescence des fichiers du site français déjà existant en utilisant un script développé par Smile afin de déclarer à EzPublish la création d'un nouveau site et de pouvoir l'administrer dans le back-office. J'ai ensuite modifié les fichiers de configuration du site afin d'indiquer les nouvelles URL correspondantes aux nouveaux sites ainsi que les paramètres de langues. La particularité étant la présence de plusieurs fichiers de configuration correspondant chacun à une étape du développement à savoir local, recette et production. Pour chaque cas le fichier de configuration doit correspondre au back-office de l'étape correspondante.  
+	\item[Pousser en recette] Une fois mon travail réalisé et testé en local je l'ai envoyé en recette afin que le client puisse y avoir accès et puisse vérifier que cela lui va. Pour réaliser ceci là aussi des scripts ont été développé par Smile pour faciliter cette tâche. Ceci étant fait il reste a avertir le client via Redmine que le développement est terminé et qu'il doit nous faire des retours en vue d'éventuelles modifications à apporter.
+	\item[Corriger les bugs] Une grosse partie du travail consiste en la correction de bugs détecté par le client. J'ai notamment eu des modifications à apporter en terme d'affichage car les traductions dans les différents langages changent les tailles des éléments et créés des problèmes. Ceci consistait simplement en la modification des propriétés CSS pour adpater l'affichage. Des fichiers de traductions ont aussi dû être créé pour leur permttre de traduire les textes. Des fichiers pdf contenant les notices des produits ne se généraient plus sur les nouveaux sites créés, il a donc fallu modifier le code PHP pour s'adapter à ses nouveaux sites. 
+	\item[Validation par le client et livraison en production] Une fois que le client a validé le travail, je suis passé à la livraison en production de la même manière que pour la recette, en utilisant un script qui facilite la chose et qui prend juste en paramètre le numéro des commits à livrer. Que ce soit pour la livraison en recette ou en production il faut aussi reporter les modifications effectuées sur le back-office local vers celui de recette et de production. Une fois la livraison éffectuée j'ai vérifié le bon fonctionnement du code mis en place et qu'aucun bug ne s'était glissé. Après le client peut toujours remonter un problème via Redmine, j'ai donc la responsabilité d'être à l'écoute au cas où un problème surgirait ou si une autre modification devait être apportée.  
+      
+      \end{description}
     \addcontentsline{toc}{subsection}{Mes réalisations}%Ajout de l'élément dans le sommaire
     \subsection*{Bilan du projet}
     \addcontentsline{toc}{subsection}{Bilan du projet}%Ajout de l'élément dans le sommaire
@@ -146,11 +167,15 @@ Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de
     \subsection*{Bilan du projet}
     
 
-\chapter{Conclusion}
-  \section{Enseignements et bénéfices}
-  \section{Les projets à venir}
+\chapter*{Conclusion}
+\addcontentsline{toc}{chapter}{Conclusion}%Ajout de l'élément dans le sommaire
+  \section*{Enseignements et bénéfices}
+  \addcontentsline{toc}{section}{Enseignements et bénéfices}%Ajout de l'élément dans le sommaire
+  \section*{Les projets à venir}
+  \addcontentsline{toc}{section}{Les projets à venir}%Ajout de l'élément dans le sommaire
 
 \chapter*{Annexes}
+\addcontentsline{toc}{chapter}{Annexes}%Ajout de l'élément dans le sommaire
 
 %Table des illustrations
 \listoffigures
