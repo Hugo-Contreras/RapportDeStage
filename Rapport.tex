@@ -18,13 +18,17 @@
 \definecolor{soft-dark}{RGB}{45,60,16}
 \definecolor{vert-clair}{HTML}{99cb38}
 
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\@footnotetext}{\footnotesize}{\scriptsize\sffamily}{}{}
+\makeatother
 \usepackage{lastpage}
 \usepackage{fancyhdr}
 \fancypagestyle{plain}{
   \fancyhf{}
   %Définition de l'entête des pages
   \renewcommand{\headrulewidth}{0pt}
-  \fancyhead[C]{{\fontfamily{pag}\selectfont\scriptsize\color{vert-fonce}{\textsc{\leftmark}}}}
+  \fancyhead[C]{{\fontfamily{pag}\selectfont\scriptsize\color{vert-fonce}{\textsc{| \leftmark}}}}
   \fancyhead[L]{}
   \fancyhead[R]{}
   %Définition du pied des pages
@@ -39,6 +43,9 @@
 \titleformat{\chapter}[hang]{\huge\textcolor{vert}}{\thechapter}{2pc}{}[]
 \titleformat{\section}[hang]{\LARGE\textcolor{vert-clair}}{\thesection}{2pc}{}[]
 \titleformat{\subsection}[hang]{\Large\textcolor{soft-dark}}{\thesubsection}{2pc}{}[]
+
+%Changement du comportement de la mise en avant d'un élément
+\renewcommand{\emph}{\bfseries}
 
 \begin{document}
 %Font sans empattement 
@@ -113,8 +120,17 @@ Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de
 \chapter{Développement d'applications Web à travers différents projets}
   \section{Dedietrich thermique}
     \subsection*{Présentation du projet et état de l'art}
+    De Dietrich est une entreprise spécialisée dans l'électroménager, le ferroviaire et le chauffage. Dans le cadre de ce projet nous travaillons sur la partie chauffage de l'entreprise, le développement du site a été réalisé avec le CMS EzPublish et plusieurs versions de ce site sont déclinées. Nous y trouvons un site principal en français \url{www.dedietrich-thermique.fr}, ainsi que des déclinaisons pour le marché russe, belge, espagnol,... A tout cela vient s'ajouter des sites mobiles eux mêmes ayant plusieurs versions en fonction des différents pays. Un service après-vente est aussi disponible en ligne et c'est dans ce cadre là que je suis intervenu. La demande du client consistait en la réalisation de sites mobiles pour leur service après-vente pour les marchés russe et belge. Ces sites existaient déjà en version française et tchèque, il fallait donc s'inspirer du travail qui avait été fait pour développer les nouveaux. 
     \addcontentsline{toc}{subsection}{Présentation du projet et état de l'art}%Ajout de l'élément dans le sommaire
     \subsection*{Mes objectifs}
+      \begin{itemize}
+
+	\item Mettre en place deux nouveaux sites mobiles pour les marchés russe et belge avec une version français belge et une version néerlandais belge
+	\item Découvrir et prendre en main le CMS EzPublish ainsi que les méthodes de travail et de livraison propres à Smile
+	\item Corriger des bugs d'affichages dû aux différentes traductions
+	\item S'assurer que les nouveaux sites créés étaient compatibles avec toutes les fonctionnalités précédemment dévelopées
+
+      \end{itemize}
     \addcontentsline{toc}{subsection}{Mes objectifs}%Ajout de l'élément dans le sommaire
     \subsection*{Mes réalisations}
     \addcontentsline{toc}{subsection}{Mes réalisations}%Ajout de l'élément dans le sommaire
@@ -138,11 +154,6 @@ Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de
 
 %Table des illustrations
 \listoffigures
-
-
-
-%Insertion d'images
-\includegraphics{chemin de l'image}
 
 %nombre d'espaces par tabulation
 \begin{verbatimtab}[4] 
