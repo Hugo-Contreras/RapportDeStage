@@ -43,6 +43,7 @@
 \titleformat{\chapter}[hang]{\huge\textcolor{vert}}{\thechapter}{2pc}{}[]
 \titleformat{\section}[hang]{\LARGE\textcolor{vert-clair}}{\thesection}{2pc}{}[]
 \titleformat{\subsection}[hang]{\Large\textcolor{soft-dark}}{\thesubsection}{2pc}{}[]
+\titleformat{\paragraph}[hang]{\sffamily\bfseries}{\theparagraph}{2pc}{}[]
 
 %Changement du comportement de la mise en avant d'un élément
 \renewcommand{\emph}{\bfseries}
@@ -178,6 +179,8 @@ Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de
       \end{itemize}
     \addcontentsline{toc}{subsection}{Mes objectifs}%Ajout de l'élément dans le sommaire
     \subsection*{Mes réalisations}
+      \paragraph*{Développer un simulateur de prêt en HTML5/JavaScript à intégrer sur différents sites partenaires (notamment une page Facebook) permettant la sélection du type de prêt dans une liste déroulante}
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neque, at lacinia tellus rhoncus sed. Aliquam erat volutpat. Sed in facilisis dolor. Nam gravida purus vel ante auctor, non venenatis mauris scelerisque. Maecenas odio nunc, dapibus eu varius ac, dapibus non diam. Nam a ligula sit amet velit porta auctor. Vestibulum vel luctus eros. Sed vestibulum neque tristique, fringilla felis sed, pharetra dui. Nulla facilisi. Aliquam viverra velit nulla, ut placerat purus auctor vitae. Aenean vitae mauris tristique metus placerat ultrices vel ac magna. Vestibulum massa leo, faucibus nec tincidunt vitae, bibendum vel tortor. Aliquam erat volutpat.
     \addcontentsline{toc}{subsection}{Mes réalisations}%Ajout de l'élément dans le sommaire
     \subsection*{Bilan du projet}
     \addcontentsline{toc}{subsection}{Bilan du projet}%Ajout de l'élément dans le sommaire
@@ -198,8 +201,10 @@ Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de
       \end{itemize}
     \addcontentsline{toc}{subsection}{Mes objectifs}%Ajout de l'élément dans le sommaire
     \subsection*{Mes réalisations}
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neque, at lacinia tellus rhoncus sed. Aliquam erat volutpat. Sed in facilisis dolor. Nam gravida purus vel ante auctor, non venenatis mauris scelerisque. Maecenas odio nunc, dapibus eu varius ac, dapibus non diam. Nam a ligula sit amet velit porta auctor. Vestibulum vel luctus eros. Sed vestibulum neque tristique, fringilla felis sed, pharetra dui. Nulla facilisi. Aliquam viverra velit nulla, ut placerat purus auctor vitae. Aenean vitae mauris tristique metus placerat ultrices vel ac magna. Vestibulum massa leo, faucibus nec tincidunt vitae, bibendum vel tortor. Aliquam erat volutpat.
     \addcontentsline{toc}{subsection}{Mes réalisations}%Ajout de l'élément dans le sommaire
     \subsection*{Bilan du projet}
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neque, at lacinia tellus rhoncus sed. Aliquam erat volutpat. Sed in facilisis dolor. Nam gravida purus vel ante auctor, non venenatis mauris scelerisque. Maecenas odio nunc, dapibus eu varius ac, dapibus non diam. Nam a ligula sit amet velit porta auctor. Vestibulum vel luctus eros. Sed vestibulum neque tristique, fringilla felis sed, pharetra dui. Nulla facilisi. Aliquam viverra velit nulla, ut placerat purus auctor vitae. Aenean vitae mauris tristique metus placerat ultrices vel ac magna. Vestibulum massa leo, faucibus nec tincidunt vitae, bibendum vel tortor. Aliquam erat volutpat.
     \addcontentsline{toc}{subsection}{Bilan du projet}%Ajout de l'élément dans le sommaire
 
 \chapter*{Conclusion}
@@ -210,10 +215,12 @@ Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de
   \addcontentsline{toc}{section}{Les projets à venir}%Ajout de l'élément dans le sommaire
 
 \chapter*{Annexes}
+\thispagestyle{\chead{}}
 \addcontentsline{toc}{chapter}{Annexes}%Ajout de l'élément dans le sommaire
 
 %Table des illustrations
 \listoffigures
+\thispagestyle{\chead{}}
 
 %nombre d'espaces par tabulation
 \begin{verbatimtab}[4] 
