@@ -1,0 +1,63 @@
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        var currentinput = null;
+        var currentarea = null;
+        var currentvalue = null;
+        jQuery('input').focus(function(){
+            currentinput = jQuery(this).prev('label').text();
+        });
+        jQuery('textarea').focus(function(){
+            currentarea = jQuery(this).prev('label').text();
+        });
+        jQuery('.simple-text + input').blur(function(){
+            currentvalue = jQuery(this).val();
+            jQuery('.hidden label').each(function() {
+                if (currentinput == jQuery(this).text()) {
+                    jQuery(this).next('input').val(currentvalue);
+                }
+            });
+        });
+        jQuery('.text-area + textarea').blur(function(){
+            currentvalue = jQuery(this).val();
+            jQuery('.hidden label').each(function() {
+                if (currentarea == jQuery(this).text()) {
+                    jQuery(this).next('textarea').val(currentvalue);
+                }
+            });
+        });
+        jQuery('.date + input.date-question').blur(function(){
+            jQuery('.hidden .date + input.date-question').val(jQuery(this).val());
+        });
+        jQuery('.email + input').blur(function(){
+            jQuery('.hidden .email + input').val(jQuery(this).val());
+        });
+        jQuery('.numeric + input.input_numeric').blur(function(){
+            currentvalue = jQuery(this).val();
+            jQuery('.hidden label').each(function() {
+                if (currentinput == jQuery(this).text()) {
+                    jQuery(this).next('input').val(currentvalue);
+                }
+            });
+        });
+        jQuery('.civility + ul input').blur(function(){
+            if ( jQuery('.hidden .civility + ul input').length != 0 ) {
+                if (jQuery(this).val() == '1')
+                    jQuery('.hidden #civilite_Mme').attr('checked', true);
+                else {
+                    jQuery('.hidden #civilite_M').attr('checked', true);
+                }
+            } else {
+                jQuery('.hidden .civility + ul input').val(jQuery(this).val());
+            }
+        });
+        jQuery('input').trigger("focus");
+        jQuery('textarea').trigger("focus");
+        jQuery('#existing_product_oui').bind('click', function() {
+            jQuery('input').trigger("focus");
+            jQuery('textarea').trigger("focus");
+            alert("{/literal}{$node.data_map.popin_message.content}{literal}");
+            jQuery(this).closest('form').attr("action", "/smileform/action/{/literal}{$node.data_map.redirect_url.content.main_node_id}{literal}");
+            jQuery(this).closest('form').submit();
+        });
+    });
+</script>

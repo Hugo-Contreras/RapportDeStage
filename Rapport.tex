@@ -6,6 +6,7 @@
 \addto\captionsfrench{\renewcommand{\chaptername}{Partie}}
 \usepackage{graphicx}
 \usepackage{newcent}
+\usepackage{listings}
 \usepackage{verbatim}
 \usepackage{moreverb}
 \usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
@@ -54,6 +55,29 @@
   font={\bfseries\sffamily}
 }
 
+%Code input
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\lstset{ %
+  backgroundcolor=\color{white},   
+  basicstyle=\scriptsize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  commentstyle=\color{mygreen},    % comment style
+  keywordstyle=\color{blue},       % keyword style
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2,                       % sets default tabsize to 2 spaces
+}
+
 \begin{document}
 %Font sans empattement 
 \sffamily
@@ -63,12 +87,12 @@
 
 \chapter*{Introduction}
 \thispagestyle{\chead{}}
+\addcontentsline{toc}{chapter}{Introduction}%Ajout de l'élément dans le sommaire
 En tant que féru de nouvelles technologies, j'ai recherché un stage dans une entreprise et surtout un secteur qui saurait me combler. Plusieurs types de PFE\footnote{Projet de Fin d'Etude} pouvaient convenir à mes attentes et je souhaitais élargir mes horizons et continuer d'agrandir mon bagage technique. Ayant une attirance plus particulière pour les technologies du Web\footnote{Abréviation pour World Wide Web}, j'ai accepté la proposition de Smile Sud-Ouest en tant que développeur d'applications Web. En effet une SSII\footnote{Société de Services en Ingénierie Informatique, maintenant appelé Entreprise de Services du Numérique (ESN)} offre la possibilité d'acquérir beaucoup de connaissances rapidement et d'engranger de l'expérience à travers des projets divers et variés.\newline
 
 L'ensemble des technologies gravitant autour du Web étant en constantes évolution je savais que ce stage était pour moi l'occasion d'exercer dans un environnement qui me passione. De plus, dès les entretiens j'ai ressenti la bonne ambiance et la convivialité dans cette agence, ceci a grandement participé à asseoir ce choix de PFE. Le fait que Smile soit une entreprise de taille conséquente a ausssi contribué dans mon choix car ayant réalisé mon stage de troisième année dans une PME\footnote{Petite et Moyenne Entreprise} comptant seulement 4 employés, j'avais à coeur de découvrir ce qu'était un grand groupe.\newline 
 
 Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de mes missions au sein de Smile pour les six mois de stage. Dans une première partie, je présenterai le groupe ainsi que sa position dans le secteur. Je porterai une attention particulière à l'agence Bordeaux où j'ai travaillé ainsi qu'aux diverses missions qui m'ont été proposées. Dans un second temps, j’aborderai les différents projets auxquels j'ai participé, leurs réalisations ainsi que les difficultés rencontrées et leurs solutions. Finalement, la dernière partie fera le bilan de ces six mois de stage et s'ouvrira sur les futurs projets en développement Web de l’entreprise.
-\addcontentsline{toc}{chapter}{Introduction}%Ajout de l'élément dans le sommaire
 
 \chapter*{Remerciements}
 \thispagestyle{\chead{}}
@@ -134,9 +158,10 @@ Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de
 \chapter{Développement d'applications Web à travers différents projets}
   \section{Dedietrich thermique}
     \subsection*{Présentation du projet et état de l'art}
-    De Dietrich est une entreprise spécialisée dans l'électroménager, le ferroviaire et le chauffage. Dans le cadre de ce projet nous travaillons sur la partie chauffage de l'entreprise, le développement du site a été réalisé avec le CMS EzPublish et plusieurs versions de ce site sont déclinées. Nous y trouvons un site principal en français \url{www.dedietrich-thermique.fr}, ainsi que des déclinaisons pour le marché russe, belge, espagnol,... A tout cela vient s'ajouter des sites mobiles eux mêmes ayant plusieurs versions en fonction des différents pays. Un service après-vente est aussi disponible en ligne et c'est dans ce cadre là que je suis intervenu. La demande du client consistait en la réalisation de sites mobiles pour leur service après-vente pour les marchés russe et belge. Ces sites existaient déjà en version française et tchèque, il fallait donc s'inspirer du travail qui avait été fait pour développer les nouveaux. 
     \addcontentsline{toc}{subsection}{Présentation du projet et état de l'art}%Ajout de l'élément dans le sommaire
+    De Dietrich est une entreprise spécialisée dans l'électroménager, le ferroviaire et le chauffage. Dans le cadre de ce projet nous travaillons sur la partie chauffage de l'entreprise, le développement du site a été réalisé avec le CMS EzPublish et plusieurs versions de ce site sont déclinées. Nous y trouvons un site principal en français \url{www.dedietrich-thermique.fr}, ainsi que des déclinaisons pour le marché russe, belge, espagnol,... A tout cela vient s'ajouter des sites mobiles eux mêmes ayant plusieurs versions en fonction des différents pays. Un service après-vente est aussi disponible en ligne et c'est dans ce cadre là que je suis intervenu. La demande du client consistait en la réalisation de sites mobiles pour leur service après-vente pour les marchés russe et belge. Ces sites existaient déjà en version française et tchèque, il fallait donc s'inspirer du travail qui avait été fait pour développer les nouveaux. 
     \subsection*{Mes objectifs}
+    \addcontentsline{toc}{subsection}{Mes objectifs}%Ajout de l'élément dans le sommaire
       \begin{itemize}
 
 	\item Mettre en place deux nouveaux sites mobiles pour les marchés russe et belge avec une version français belge et une version néerlandais belge
@@ -145,8 +170,8 @@ Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de
 	\item S'assurer que les nouveaux sites créés étaient compatibles avec toutes les fonctionnalités précédemment développées
 
       \end{itemize}
-    \addcontentsline{toc}{subsection}{Mes objectifs}%Ajout de l'élément dans le sommaire
     \subsection*{Mes réalisations}
+    \addcontentsline{toc}{subsection}{Mes réalisations}%Ajout de l'élément dans le sommaire
       \begin{description}
 
 	\item[Copie de l'arborescence] J'ai commencé par copier l'arborescence des fichiers du site français déjà existant en utilisant un script développé par Smile afin de déclarer à EzPublish la création d'un nouveau site et de pouvoir l'administrer dans le back-office. J'ai ensuite modifié les fichiers de configuration du site afin d'indiquer les nouvelles URL correspondantes aux nouveaux sites ainsi que les paramètres de langues. La particularité étant la présence de plusieurs fichiers de configuration correspondant chacun à une étape du développement à savoir local, recette et production. Pour chaque cas le fichier de configuration doit correspondre au back-office de l'étape correspondante.  
@@ -155,43 +180,60 @@ Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de
 	\item[Validation par le client et livraison en production] Une fois que le client a validé le travail, je suis passé à la livraison en production de la même manière que pour la recette, en utilisant un script qui facilite la chose et qui prend juste en paramètre le numéro des commits à livrer. Que ce soit pour la livraison en recette ou en production il faut aussi reporter les modifications effectuées sur le back-office local vers celui de recette et de production. Une fois la livraison effectuée j'ai vérifié le bon fonctionnement du code mis en place et qu'aucun bug ne s'était glissé. Après le client peut toujours remonter un problème via Redmine, j'ai donc la responsabilité d'être à l'écoute au cas où un problème surgirait ou si une autre modification devait être apportée.  
       
       \end{description}
-    \addcontentsline{toc}{subsection}{Mes réalisations}%Ajout de l'élément dans le sommaire
     \subsection*{Bilan du projet}
-    Cette première participation à un projet concret fut très enrichissante aussi bien sur le plan technique qu'humain. Du point de vue technique cela m'a permis d'acquérir des connaissances sur le CMS EzPublish que je ne connaissais pas. De plus l'utilisation exclusive du terminal Linux a consolidé mes bases dans ce domaine notamment grâce à la manipulation des scripts internes à Smile que j'ai eu l'occasion de modifier moi même afin de répondre à mes besoins. En ce qui concerne EzPublish j'ai eu globalement à faire à l'ensemble des aspects du CMS ce qui m'a donné une vue générale de son fonctionnement et me permettra d'aborder les prochains projets avec plus de facilités. Quand à mes réalisations, tout s'est bien déroulé, les sites sont maintenant disponibles en ligne et le client en est satisfait. C'est un des avantages de ce métier, c'est que l'on peut directement voir l'aboutissement de son travail une fois que celui-ci est terminé. Pour ce qui est de l'aspect humain ce premier projet m'a enseigné les méthodes de gestion au sein de Smile, tout le cheminement pour passer de la demande du client à la livraison en production. Sans oublier l'utilisation des outils internes notamment Redmine afin d'informer le client de l'avancement du développement et des problèmes rencontrés. Ainsi que la communication entre développeurs en cas de problème ou simplement pour avoir de la visibilité sur l'état du projet. Malgré que j'ai passé peu de temps sur le projet (à peine un mois), celui-ci a été très formateur et m'a permis d'appréhender la suite avec plus de facilités. C'est donc naturellement que j'ai enchaîné avec un autre projet plus long et plus compliqué, où je pourrais mettre en pratique les connaissances acquises lors de cette première expérience, que je vais détaillé par la suite.  
     \addcontentsline{toc}{subsection}{Bilan du projet}%Ajout de l'élément dans le sommaire
+    Cette première participation à un projet concret fut très enrichissante aussi bien sur le plan technique qu'humain. Du point de vue technique cela m'a permis d'acquérir des connaissances sur le CMS EzPublish que je ne connaissais pas. De plus l'utilisation exclusive du terminal Linux a consolidé mes bases dans ce domaine notamment grâce à la manipulation des scripts internes à Smile que j'ai eu l'occasion de modifier moi même afin de répondre à mes besoins. En ce qui concerne EzPublish j'ai eu globalement à faire à l'ensemble des aspects du CMS ce qui m'a donné une vue générale de son fonctionnement et me permettra d'aborder les prochains projets avec plus de facilités. Quand à mes réalisations, tout s'est bien déroulé, les sites sont maintenant disponibles en ligne et le client en est satisfait. C'est un des avantages de ce métier, c'est que l'on peut directement voir l'aboutissement de son travail une fois que celui-ci est terminé. Pour ce qui est de l'aspect humain ce premier projet m'a enseigné les méthodes de gestion au sein de Smile, tout le cheminement pour passer de la demande du client à la livraison en production. Sans oublier l'utilisation des outils internes notamment Redmine afin d'informer le client de l'avancement du développement et des problèmes rencontrés. Ainsi que la communication entre développeurs en cas de problème ou simplement pour avoir de la visibilité sur l'état du projet. Malgré que j'ai passé peu de temps sur le projet (à peine un mois), celui-ci a été très formateur et m'a permis d'appréhender la suite avec plus de facilités. C'est donc naturellement que j'ai enchaîné avec un autre projet plus long et plus compliqué, où je pourrais mettre en pratique les connaissances acquises lors de cette première expérience, que je vais détaillé par la suite.  
     
 \newpage
     
   \section{Banque Française Mutualiste (BFM)}
     \subsection*{Présentation du projet et état de l'art}
-    La Banque Française Mutualiste est une banque, créée en 1986 sous le nom de Banque Fédérale Mutuelle, par les mutuelles de la Fonction publique qui ont souhaité proposer aux agents du Secteur public une banque citoyenne, qui conjuguerait les services bancaires et les valeurs mutualistes. Dans le cadre de ce projet Smile à un contrat de TMA et l'objectif est la refonte du site existant. Dans les tâches a effectuer il ya notamment la conversion de modules anciennement en Flash vers du HTML5, l'ajout de fonctionnalités et quelques retouches graphiques. Une des possibilité intéressante est de pouvoir réaliser des simulations de prêts directement sur le site, cependant ceci est réalisé en Flash qui est une technologie propiétaire d'Adobe de moins en moins utilisée car non compatible avec les plateformes mobiles. Le clients souhaitait donc redévelopper ces simulateurs en HTML5/JavaScript. De plus ce type de simulateur est à intégrer sur d'autres sites partenaires ainsi que sur Facebook. Le problème de cette intégration est que BFM propose plusieurs types de prêts (moins de 35 ans, prêt auto, prêt travaux,...) et qu'ils souhaiteraient avoir un seul simulateur avec une liste déroulante permettant de choisir le type de prêt et que les taux s'adaptent en conséquence. Car si sur le site de BFM avoir un simulateur par page correspondante aux différents types de prêts ne posent pas de problème, il n'en ai pas de même pour les sites partenaires où l'on souhaite tout intégrer dans un bloc de taille limité (notamment sur Facebook). Parmis les nouvelles fonctionnalités que demandaient le client on trouve un template vide leur permettant de créer des landing page, ils avaient l'habitude de les faire à part puis de les déposer sur le serveur, l'idée était d'intégrer ceci au CMS EzPublish pour faciliter l'élaboration et la maintenance de ces pages. Créer un nouveau paramètre que l'on peut ajouter dans les formulaires permettant la redirection vers la page d'un produit existant tout en gardant les données déjà saisies. Il s'agit donc d'un projet complet et complexe avec de nombreuses tâches à effectuer même si beaucoup se base sur de l'existant et qu'il s'agit d'un changement de technologie. Le fait de travailler avec le secteur de la banque oblige à une certaine rigueur dans le code afin de ne pas compromettre des données sensibles.   
     \addcontentsline{toc}{subsection}{Présentation du projet et état de l'art}%Ajout de l'élément dans le sommaire
+    La Banque Française Mutualiste est une banque, créée en 1986 sous le nom de Banque Fédérale Mutuelle, par les mutuelles de la Fonction publique qui ont souhaité proposer aux agents du Secteur public une banque citoyenne, qui conjuguerait les services bancaires et les valeurs mutualistes. Dans le cadre de ce projet Smile à un contrat de TMA et l'objectif est la refonte du site existant. Dans les tâches a effectuer il ya notamment la conversion de modules anciennement en Flash vers du HTML5, l'ajout de fonctionnalités et quelques retouches graphiques. Une des possibilité intéressante est de pouvoir réaliser des simulations de prêts directement sur le site, cependant ceci est réalisé en Flash qui est une technologie propiétaire d'Adobe de moins en moins utilisée car non compatible avec les plateformes mobiles. Le clients souhaitait donc redévelopper ces simulateurs en HTML5/JavaScript. De plus ce type de simulateur est à intégrer sur d'autres sites partenaires ainsi que sur Facebook. Le problème de cette intégration est que BFM propose plusieurs types de prêts (moins de 35 ans, prêt auto, prêt travaux,...) et qu'ils souhaiteraient avoir un seul simulateur avec une liste déroulante permettant de choisir le type de prêt et que les taux s'adaptent en conséquence. Car si sur le site de BFM avoir un simulateur par page correspondante aux différents types de prêts ne posent pas de problème, il n'en ai pas de même pour les sites partenaires où l'on souhaite tout intégrer dans un bloc de taille limité (notamment sur Facebook). Parmis les nouvelles fonctionnalités que demandaient le client on trouve un template vide leur permettant de créer des landing page, ils avaient l'habitude de les faire à part puis de les déposer sur le serveur, l'idée était d'intégrer ceci au CMS EzPublish pour faciliter l'élaboration et la maintenance de ces pages. Créer un nouveau paramètre que l'on peut ajouter dans les formulaires permettant la redirection vers la page d'un produit existant tout en gardant les données déjà saisies. Il s'agit donc d'un projet complet et complexe avec de nombreuses tâches à effectuer même si beaucoup se base sur de l'existant et qu'il s'agit d'un changement de technologie. Le fait de travailler avec le secteur de la banque oblige à une certaine rigueur dans le code afin de ne pas compromettre des données sensibles. Une particularité de ce projet étant que nous n'avons pas accès aux serveurs de production du fait que le client soit une banque, ceci nous oblige donc à développer en interne, à leur montrer via un serveur de recette auxquels ils ont accès mais pour les livraisons en production nous leur transmettons les fichiers et c'est eux mêmes qu'ils les déploient sur leur serveur. Le principal inconvénient étant que nous n'avons pas accès au code qui est en production ce qui est parfois problématique lorsque nous n'arrivons pas à reproduire les problèmes en local. Ceci oblige à beaucoup de patience et de précision lors des livraisons et des explications pour déployer le code que nous leur fournissons.  
     \subsection*{Mes objectifs}
+    \addcontentsline{toc}{subsection}{Mes objectifs}%Ajout de l'élément dans le sommaire
       \begin{itemize}
 
-	\item Développer un simulateur de prêt en HTML5/JavaScript à intégrer sur différents sites partenaires (notamment une page Facebook) permettant la sélection du type de prêt dans une liste déroulante
+	\item Développer un simulateur de prêt en HTML5/JavaScript à intégrer sur différents sites partenaires (notamment une page Facebook), permettant la sélection du type de prêt dans une liste déroulante
 	\item Convertir un simulateur d'épargne flash vers une version en HTML5/JavaScript 
 	\item Développer un template intégré à EzPublish pour la création de landing page et réaliser un exemple en s'inspirant de l'existant
 	\item Développer un nouvel élément de formulaire permettant la redirection vers une page produit existant et transmettant les données déjà saisies par l'utilisateur
-	\item Développer un simulateur de prêt indépendant du CMS EzPublish
  	\item Développer une page Web à disposition des téléconseillers intégrant une page d’orientation vers les différentes simulation de prêts personnels et une fonctionnalité d’envoi de mail type intégrant un lien vers une simulation avec des paramètres intégrés dans l’URL
 
       \end{itemize}
-    \addcontentsline{toc}{subsection}{Mes objectifs}%Ajout de l'élément dans le sommaire
     \subsection*{Mes réalisations}
-      \paragraph*{Développer un simulateur de prêt en HTML5/JavaScript à intégrer sur différents sites partenaires (notamment une page Facebook) permettant la sélection du type de prêt dans une liste déroulante}
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neque, at lacinia tellus rhoncus sed. Aliquam erat volutpat. Sed in facilisis dolor. Nam gravida purus vel ante auctor, non venenatis mauris scelerisque. Maecenas odio nunc, dapibus eu varius ac, dapibus non diam. Nam a ligula sit amet velit porta auctor. Vestibulum vel luctus eros. Sed vestibulum neque tristique, fringilla felis sed, pharetra dui. Nulla facilisi. Aliquam viverra velit nulla, ut placerat purus auctor vitae. Aenean vitae mauris tristique metus placerat ultrices vel ac magna. Vestibulum massa leo, faucibus nec tincidunt vitae, bibendum vel tortor. Aliquam erat volutpat.
     \addcontentsline{toc}{subsection}{Mes réalisations}%Ajout de l'élément dans le sommaire
+      \paragraph*{Développer un simulateur de prêt en HTML5/JavaScript à intégrer sur différents sites partenaires (notamment une page Facebook), permettant la sélection du type de prêt dans une liste déroulante}
+      Pour coder cette fonctionnalité il s'agissait d'un mélange de JavaScript avec le framework jQuery et d'EzPublish. L'idée de la conception était de récupérer les différents simulateurs existant en fonction du choix de l'utilisateur dans la liste déroulante puis grâce à un appel AJAX de l'afficher. Plusieurs difficultés se présentaient à moi, récupérer le bon simulateur en fonction du choix de l'utilisateur, réussir à le charger rapidement (que ce soit transparent pour l'utilisateur) et enfin ajuster l'affichae car pour l'intégrer sur Facebook le client avait besoin du simulteur seul sans le design habituel du site. J'ai donc commencé par générer la liste déroulante en fonction des types de prêts choisis dans le back-office. En effet ce simulateur est configurable et s'adapte en fonction des types de prêts sélectionnés. Je récupère ensuite les URL correspondantes afin de pouvoir les utiliser par la sutie lors de l'appel AJAX. En parrallèle il a fallu créé dans le back-office la classe correspondante pour pouvoir contribuer le contenu à afficher sur les pages du CMS. C'est notamment ici que l'on décide des types de prêts qui seront proposés.
+      \lstinputlisting[language=PHP, firstline=1, lastline=18]{global_loan_simulator_1.php}
+      La partie EzPublish se termine ici et il reste maintenant le JavaScript afin d'afficher le simulateur. Pour ce faire j'ai utiliser un appel AJAX qui permet l'affichage du page distante sans recharger la page actuelle. Pour savoir quelle page appeler on se sert de la liste déroulante et des URL récupérée précédemment. Ensuite j'ai nétoyé un peu ce qui serait affiché pour se contenter de ce qu'on avait besoin à savoir juste le simulateur.
+      \lstinputlisting[language=HTML, firstline=1, lastline=41]{global_loan_simulator_2.html}
+      Pour finir j'ai eu a adapter le style du simulteur car le client souhaitait un style différent des simulateurs habituels j'ai intégré un peu de CSS3 afin d'ajuster l'affichage. Une fois le développement terminé j'ai envoyé le lien au client pour qu'il puisse effectuer ses tests et nous faire un retour sur ce qui avait été effectué. Nous travaillons aussi avec un autre prestataire du client qui était en charge de l'intégration sur Facebook, il fallait donc aussi voir avec eux si tout était bon. Le client était satisfait et après quelques ajustement de compatibilité avec IE nous avons pu passer le simulateur en production afin de fournir l'URL final pour l'intégration d'une iframe sur la page Facebook. C'est à ce moment qu'un problème inatendu est arrivé car Facebook n'autorise l'intégration de lien uniquement en HTTPS or le site bfm.fr utilise HTTP, il donc fallu développer une configuration au niveau du serveur ainf de réécrire les demande en HTTP vers HTTPS mais uniquement pour la page du simulateur que nous venions de développer car le client ne souhaitait pas que tout son site soit en HTTPS pour le moment. Une fois les tests effectués en interne nous avons pu transmettre la configuration a mettre en place sur les serveurs de production et tout était fonctionnel.
+      \lstinputlisting[language=bash, firstline=1, lastline=14]{global_loan_simulator_3.txt}
+      \paragraph*{Convertir un simulateur d'épargne flash vers une version en HTML5/JavaScript}
+      Pour développer ce simulateur j'ai pu reprendre du code existant et l'adapter aux besoins précis de ce cas. Le code est composé en majorité de JavaScript avec le framexork jQuery afin d'afficher le simulateur et de traiter l'intéraction avec l'utilisateur. Une partie de PHP propre à EzPublish est aussi présente afin de récupérer depuis le back-office les données choisis pour les taux d'épargnes. Ceci étant configurable j'ai là aussi créé une classe propre à ce type de simulateur et j'ai ensuite modifié le code pour récupérer les bonnes valeurs. Il n'y a pas eu de difficultés majeurs avec cette fonctionnalité car je me basais sur de l'existant il fallait donc juste faire attention à ne récupérer que le nécessaire et ensuite la partie la plus longue était d'adapter l'affichage pour ressembler à la version originale en flash, ce que j'ai réalisé en CSS (cf. Annexe 1 page \pageref{annexe1}).
+      \paragraph*{Développer un template intégré à EzPublish pour la création de landing page et réaliser un exemple en s'inspirant de l'existant}
+      Dans le cadre de la création de landing page le client avait l'habitude de développer des pages à part hors du CMS puis de les déposer sur le serveur. Ceci pose problème pour la maintenance et rend la page non contribuable depuis le back-office d'EzPublish. J'ai donc commencé par créé une nouvelle classe dans EzPublish pour les landing page et j'ai ensuite codé un nouveau layout avec uniquement les entêtes de la page et la structure HTML. Le contenu de la page devant être entièrement contribuable depuis le back-office le code était assé simple et consistait juste à récupérer les données. Afin de vérifier le bon fonctionnement j'ai intégrer les landing page existentes directement dans le CMS.
+      \paragraph*{Développer un nouvel élément de formulaire permettant la redirection vers une page produit existant et transmettant les données déjà saisies par l'utilisateur}
+      Ce développement était un des plus complexes à réaliser car presque tous les éléments devaient être configurables depuis le back-office et les données capables de passer d'un formulaire à l'autre. J'ai donc commencé par créer la classe dans EzPublish avec un bouton radio oui/non afin de lancer la redirection vers un formulaire existant. Ensuite un champ pour sélectionner le formulaire vers lequel pointer et un champ pour le message à afficher lors de la redirection. 
+      J'ai ensuite créé le type d'élément à ajouter dans les formulaires que j'ai nommé «Produit Existant». C'est ici que l'essentiel du code s'est écrit, l'idée étant de récupérer les questions du formulaire vers lequel on pointe puis de comparer si les champs existent aussi dans le formulaire actuel. Si tel est le cas alors je transmet les données saisies par l'utilisateur lors de la redirection si celle-ci est actionnée. 
+      La première partie de récupération des champs existant sur le formulaire distant se fait grâce aux méthodes fournient par le CMS et on créé ainsi des champs cachés qui permettront la transmission des données. 
+      \lstinputlisting[language=php, firstline=1, lastline=24]{question_conditionnelle_1.php}
+      Encore une fois la deuxième partie du développement s'est effectuée en JavaScript avec le framework jQuery. Je devais récupérer les donées saisies par l'utilisateur à chaque fois qu'il quittait un champ puis les transmettre dans les champs récupérés cachés du formulaire vers lequel on pointe. Ensuite on vérifie si l'utilisateur choisi l'option «Produit Existant» et si tel est le cas on affiche la popin avec le message indiquant la redirection vers le nouveau formulaire tout en transmettant les données déjà saisies (cf. Annexe 2 page \pageref{annexe2}).
+      \paragraph*{Développer une page Web à disposition des téléconseillers intégrant une page d’orientation vers les différentes simulation de prêts personnels et une fonctionnalité d’envoi de mail type intégrant un lien vers une simulation avec des paramètres intégrés dans l’URL}
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neque, at lacinia tellus rhoncus sed. Aliquam erat volutpat. Sed in facilisis dolor. Nam gravida purus vel ante auctor, non venenatis mauris scelerisque. Maecenas odio nunc, dapibus eu varius ac, dapibus non diam. Nam a ligula sit amet velit porta auctor. Vestibulum vel luctus eros. Sed vestibulum neque tristique, fringilla felis sed, pharetra dui. Nulla facilisi. Aliquam viverra velit nulla, ut placerat purus auctor vitae. Aenean vitae mauris tristique metus placerat ultrices vel ac magna. Vestibulum massa leo, faucibus nec tincidunt vitae, bibendum vel tortor. Aliquam erat volutpat.
     \subsection*{Bilan du projet}
     \addcontentsline{toc}{subsection}{Bilan du projet}%Ajout de l'élément dans le sommaire
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neque, at lacinia tellus rhoncus sed. Aliquam erat volutpat. Sed in facilisis dolor. Nam gravida purus vel ante auctor, non venenatis mauris scelerisque. Maecenas odio nunc, dapibus eu varius ac, dapibus non diam. Nam a ligula sit amet velit porta auctor. Vestibulum vel luctus eros. Sed vestibulum neque tristique, fringilla felis sed, pharetra dui. Nulla facilisi. Aliquam viverra velit nulla, ut placerat purus auctor vitae. Aenean vitae mauris tristique metus placerat ultrices vel ac magna. Vestibulum massa leo, faucibus nec tincidunt vitae, bibendum vel tortor. Aliquam erat volutpat.
     
 \newpage
     
   \section{Projet X}
     \subsection*{Présentation du projet et état de l'art}
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neque, at lacinia tellus rhoncus sed. Aliquam erat volutpat. Sed in facilisis dolor. Nam gravida purus vel ante auctor, non venenatis mauris scelerisque. Maecenas odio nunc, dapibus eu varius ac, dapibus non diam. Nam a ligula sit amet velit porta auctor. Vestibulum vel luctus eros. Sed vestibulum neque tristique, fringilla felis sed, pharetra dui. Nulla facilisi. Aliquam viverra velit nulla, ut placerat purus auctor vitae. Aenean vitae mauris tristique metus placerat ultrices vel ac magna. Vestibulum massa leo, faucibus nec tincidunt vitae, bibendum vel tortor. Aliquam erat volutpat.
     \addcontentsline{toc}{subsection}{Présentation du projet et état de l'art}%Ajout de l'élément dans le sommaire
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neque, at lacinia tellus rhoncus sed. Aliquam erat volutpat. Sed in facilisis dolor. Nam gravida purus vel ante auctor, non venenatis mauris scelerisque. Maecenas odio nunc, dapibus eu varius ac, dapibus non diam. Nam a ligula sit amet velit porta auctor. Vestibulum vel luctus eros. Sed vestibulum neque tristique, fringilla felis sed, pharetra dui. Nulla facilisi. Aliquam viverra velit nulla, ut placerat purus auctor vitae. Aenean vitae mauris tristique metus placerat ultrices vel ac magna. Vestibulum massa leo, faucibus nec tincidunt vitae, bibendum vel tortor. Aliquam erat volutpat.
     \subsection*{Mes objectifs}
+    \addcontentsline{toc}{subsection}{Mes objectifs}%Ajout de l'élément dans le sommaire
       \begin{itemize}
 
 	\item Donec vitae erat enim. Maecenas tempus egestas sem, sit amet condimentum justo consectetur sed. Donec quis iaculis 
@@ -199,13 +241,12 @@ Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de
 	\item Pellentesque quis tincidunt elit, eu ultrices nisi. Praesent consectetur semper cursus. In hac habitasse platea dictumst. 
 
       \end{itemize}
-    \addcontentsline{toc}{subsection}{Mes objectifs}%Ajout de l'élément dans le sommaire
     \subsection*{Mes réalisations}
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neque, at lacinia tellus rhoncus sed. Aliquam erat volutpat. Sed in facilisis dolor. Nam gravida purus vel ante auctor, non venenatis mauris scelerisque. Maecenas odio nunc, dapibus eu varius ac, dapibus non diam. Nam a ligula sit amet velit porta auctor. Vestibulum vel luctus eros. Sed vestibulum neque tristique, fringilla felis sed, pharetra dui. Nulla facilisi. Aliquam viverra velit nulla, ut placerat purus auctor vitae. Aenean vitae mauris tristique metus placerat ultrices vel ac magna. Vestibulum massa leo, faucibus nec tincidunt vitae, bibendum vel tortor. Aliquam erat volutpat.
     \addcontentsline{toc}{subsection}{Mes réalisations}%Ajout de l'élément dans le sommaire
-    \subsection*{Bilan du projet}
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neque, at lacinia tellus rhoncus sed. Aliquam erat volutpat. Sed in facilisis dolor. Nam gravida purus vel ante auctor, non venenatis mauris scelerisque. Maecenas odio nunc, dapibus eu varius ac, dapibus non diam. Nam a ligula sit amet velit porta auctor. Vestibulum vel luctus eros. Sed vestibulum neque tristique, fringilla felis sed, pharetra dui. Nulla facilisi. Aliquam viverra velit nulla, ut placerat purus auctor vitae. Aenean vitae mauris tristique metus placerat ultrices vel ac magna. Vestibulum massa leo, faucibus nec tincidunt vitae, bibendum vel tortor. Aliquam erat volutpat.
+    \subsection*{Bilan du projet}
     \addcontentsline{toc}{subsection}{Bilan du projet}%Ajout de l'élément dans le sommaire
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neque, at lacinia tellus rhoncus sed. Aliquam erat volutpat. Sed in facilisis dolor. Nam gravida purus vel ante auctor, non venenatis mauris scelerisque. Maecenas odio nunc, dapibus eu varius ac, dapibus non diam. Nam a ligula sit amet velit porta auctor. Vestibulum vel luctus eros. Sed vestibulum neque tristique, fringilla felis sed, pharetra dui. Nulla facilisi. Aliquam viverra velit nulla, ut placerat purus auctor vitae. Aenean vitae mauris tristique metus placerat ultrices vel ac magna. Vestibulum massa leo, faucibus nec tincidunt vitae, bibendum vel tortor. Aliquam erat volutpat.
 
 \chapter*{Conclusion}
 \addcontentsline{toc}{chapter}{Conclusion}%Ajout de l'élément dans le sommaire
@@ -217,21 +258,16 @@ Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de
 \chapter*{Annexes}
 \thispagestyle{\chead{}}
 \addcontentsline{toc}{chapter}{Annexes}%Ajout de l'élément dans le sommaire
-
+  \section*{Annexe 1}
+  \addcontentsline{toc}{section}{Annexe 1}%Ajout de l'élément dans le sommaire
+  \label{annexe1}
+  \lstinputlisting[language=HTML, firstline=1, lastline=68]{saving_simulator_html5.html}
+  \section*{Annexe 2}
+  \addcontentsline{toc}{section}{Annexe 2}%Ajout de l'élément dans le sommaire
+  \label{annexe2}
+  \lstinputlisting[language=HTML, firstline=1, lastline=63]{question_conditionnelle_2.html}
 %Table des illustrations
 \listoffigures
 \thispagestyle{\chead{}}
-
-%nombre d'espaces par tabulation
-\begin{verbatimtab}[4] 
-jQuery('.simple-text + input').blur(function(){
-            currentvalue = jQuery(this).val();
-            jQuery('.hidden label').each(function() {
-                if (currentinput == jQuery(this).text()) {
-                    jQuery(this).next('input').val(currentvalue);
-                }
-            });
-        });
-\end{verbatimtab}
 
 \end{document}

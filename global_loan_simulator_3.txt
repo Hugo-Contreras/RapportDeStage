@@ -1,0 +1,15 @@
+bfm.conf (port 80)
+
+RewriteEngine On
+RewriteCond !=on
+RewriteRule ^/Simulation-Pret-Infirmiere$ https://{SERVER_NAME}/Simulation-Pret-Infirmiere [NC,R=301,L]
+RewriteRule ^/Simulation-Pret-Militaire$ https://%{SERVER_NAME}/Simulation-Pret-Militaire [NC,R=301,L]
+
+bfm-ssl.conf (port 443)
+
+RewriteEngine On
+RewriteCond !.*bfm.*$
+RewriteCond %{REQUEST_URI} !^/Simulation-Pret-Militaire 
+RewriteCond %{REQUEST_URI} !^/Simulation-Pret-Infirmiere
+RewriteRule ^/?(.*) http://{SERVER_NAME}/$1 [NC,R=301,L,NS]
+
