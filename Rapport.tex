@@ -233,19 +233,17 @@ Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de
   \section{POC (Proof Of Concept) thème responsive Gifi}
     \subsection*{Présentation du projet et état de l'art}
     \addcontentsline{toc}{subsection}{Présentation du projet et état de l'art}%Ajout de l'élément dans le sommaire
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neque, at lacinia tellus rhoncus sed. Aliquam erat volutpat. Sed in facilisis dolor. Nam gravida purus vel ante auctor, non venenatis mauris scelerisque. Maecenas odio nunc, dapibus eu varius ac, dapibus non diam. Nam a ligula sit amet velit porta auctor. Vestibulum vel luctus eros. Sed vestibulum neque tristique, fringilla felis sed, pharetra dui. Nulla facilisi. Aliquam viverra velit nulla, ut placerat purus auctor vitae. Aenean vitae mauris tristique metus placerat ultrices vel ac magna. Vestibulum massa leo, faucibus nec tincidunt vitae, bibendum vel tortor. Aliquam erat volutpat.
+    L'idée de ce « mini-projet » ou POC était de vérifier la faisabilité d'un changement de thème sans modifier la version de l'application. Le site e-commerce de Gifi étant dans une ancienne version sans thème responsive d'intégré nous voulions récupérer le thème responsive natif de la nouvelle version de Magento et vérifier que sa mise en place ne casse pas le design actuel du site. 
     \subsection*{Mes objectifs}
     \addcontentsline{toc}{subsection}{Mes objectifs}%Ajout de l'élément dans le sommaire
       \begin{itemize}
 
-	\item Donec vitae erat enim. Maecenas tempus egestas sem, sit amet condimentum justo consectetur sed. Donec quis iaculis 
-	\item urna. Donec sodales lobortis diam, at consequat erat bibendum pulvinar. Nunc eu ultricies justo, eget viverra ligula. 
-	\item Pellentesque quis tincidunt elit, eu ultrices nisi. Praesent consectetur semper cursus. In hac habitasse platea dictumst. 
+	\item Intégrer le thème responsive d'un Magento 1.14 sur un Magento 1.13 
 
       \end{itemize}
     \subsection*{Mes réalisations}
     \addcontentsline{toc}{subsection}{Mes réalisations}%Ajout de l'élément dans le sommaire
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neque, at lacinia tellus rhoncus sed. Aliquam erat volutpat. Sed in facilisis dolor. Nam gravida purus vel ante auctor, non venenatis mauris scelerisque. Maecenas odio nunc, dapibus eu varius ac, dapibus non diam. Nam a ligula sit amet velit porta auctor. Vestibulum vel luctus eros. Sed vestibulum neque tristique, fringilla felis sed, pharetra dui. Nulla facilisi. Aliquam viverra velit nulla, ut placerat purus auctor vitae. Aenean vitae mauris tristique metus placerat ultrices vel ac magna. Vestibulum massa leo, faucibus nec tincidunt vitae, bibendum vel tortor. Aliquam erat volutpat.
+    J'ai donc commencé par récupérer la version correspondante à celle mise en place sur le site de Gifi (Magento 1.13), je l'ai installé sur ma LXC afin de pouvoir commencer le test. Ensuite j'ai copié le thème responsive de Magento 1.14 et je l'ai chargé depuis le back-office. Il s'agissait ensuite d'effectuer des tests de compatibilité pour voir si des modules natifs de Magento ne fonctionnait plus. Les fiches produits notamment ne s'affichait plus correctement car une fonction n'était plus déclaré au même endroit dans le code. J'ai donc remonté ces petits beugs et confirmé la faisabilité de ce « backportage » de thème. 
     \subsection*{Bilan du projet}
     \addcontentsline{toc}{subsection}{Bilan du projet}%Ajout de l'élément dans le sommaire
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neque, at lacinia tellus rhoncus sed. Aliquam erat volutpat. Sed in facilisis dolor. Nam gravida purus vel ante auctor, non venenatis mauris scelerisque. Maecenas odio nunc, dapibus eu varius ac, dapibus non diam. Nam a ligula sit amet velit porta auctor. Vestibulum vel luctus eros. Sed vestibulum neque tristique, fringilla felis sed, pharetra dui. Nulla facilisi. Aliquam viverra velit nulla, ut placerat purus auctor vitae. Aenean vitae mauris tristique metus placerat ultrices vel ac magna. Vestibulum massa leo, faucibus nec tincidunt vitae, bibendum vel tortor. Aliquam erat volutpat.
