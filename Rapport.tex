@@ -253,14 +253,18 @@ Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de
   \section{Refonte graphique Darjeeling}
     \subsection*{Présentation du projet et état de l'art}
     \addcontentsline{toc}{subsection}{Présentation du projet et état de l'art}%Ajout de l'élément dans le sommaire
-    Darjeeling fait partie des clients de Smile depuis relativement longtemps, le site initial a été réalisé par le groupe. Aujourd'hui nous intervenons dans le cadre d'une refonte graphique et allons modifier principalement les templates, les styles et s'assurer de ne pas dégrader le résultat sur mobile. Il n'y a donc pas ou très peu de développement fonctionnel sur ce projet, uniquement du visuel. Les technologies utilisées n'en sont pas moins intéressantes de part le système mis en place pour la compilation des fichiers de style et JavaScript.
+    Darjeeling fait partie des clients de Smile depuis relativement longtemps, le site initial a été réalisé par le groupe. Aujourd'hui nous intervenons dans le cadre d'une refonte graphique et allons modifier principalement les templates, les styles et s'assurer de ne pas dégrader le résultat sur mobile. Il n'y a donc pas ou très peu de développement fonctionnel sur ce projet, uniquement du visuel. Les technologies utilisées n'en sont pas moins intéressantes, notamment le système mis en place pour la compilation des fichiers de style et JavaScript. En effet nous utilisons Sass (Syntactically Awesome Style Sheets) qui est une sorte d'amélioration du language CSS et qui y ajoute certaines fonctionnalités. Ces fichiers doivent être ensuite compilé pour obtenir un CSS qui est le seul langage compris par les navigateurs. Pour ce faire nous utilisons Grunt qui surveille toutes modifications apportées aux fichiers Sass et qui nous seulement les compile mais les minifie aussi. Au final nous obtenons un seul et unique gros fichier CSS qui est la concaténation de tous les fichiers Sass. Ceci permet de développer sur des fichiers séparés et clairs puis de livrer au serveur un fichier unique ce qui est préférable en terme de performance. Comme la plupart des projets la principale difficulté sera le temps, car nous avons eu un peu plus de 2 mois pour réaliser le projet.
     \subsection*{Mes objectifs}
     \addcontentsline{toc}{subsection}{Mes objectifs}%Ajout de l'élément dans le sommaire
       \begin{itemize}
 
-	\item Donec vitae erat enim. Maecenas tempus egestas sem, sit amet condimentum justo consectetur sed. Donec quis iaculis 
-	\item urna. Donec sodales lobortis diam, at consequat erat bibendum pulvinar. Nunc eu ultricies justo, eget viverra ligula. 
-	\item Pellentesque quis tincidunt elit, eu ultrices nisi. Praesent consectetur semper cursus. In hac habitasse platea dictumst. 
+	\item Template page wishlist
+	\item Pictos tunner de vente  
+	\item Header  
+	\item Footer
+	\item Menu de navigation
+	\item Template liste produits & filtres
+	\item Optimisation mobile
 
       \end{itemize}
     \subsection*{Mes réalisations}
