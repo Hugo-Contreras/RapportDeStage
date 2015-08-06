@@ -1,0 +1,19 @@
+<?php
+$_pagesDarjeeling = $this->getPagesDarjeeling(); // Recuperation from BO
+?>
+
+<ul>
+    <li class="category">
+        <a href="<?php echo $this->getUrl('conseils'); ?>"><?php echo $this->__('Our tips'); ?></a>
+    </li>
+    <?php if ( $_pagesDarjeeling && $_pagesCountDarjeeling > 0 ) : ?> // Verification of existing elements
+        <?php foreach ( $_pagesDarjeeling as $_pageDarjeeling ) : ;?> // Loop on elements
+            <li class="category">
+                <a href="<?php echo $_helper->getPageUrl($_pageDarjeeling); ?>"><?php echo $_pageDarjeeling->getTitle(); ?></a> // Display the link
+            </li>
+        <?php endforeach; ?>
+    <?php endif; ?>
+    <li class="category">
+        <a href="<?php echo $this->getUrl('affiliate'); ?>"><?php echo $this->__('Affiliation'); ?></a>
+    </li>
+</ul>
