@@ -1,3 +1,4 @@
+<script>
 jQuery(document).ready(function () {
     jQuery( '.express-wishlist input.add-to-wishlist' ).each(function() {
         jQuery( this ).attr("title", '<?php echo $this->__("Add to my cravings"); ?>');
@@ -27,3 +28,4 @@ jQuery( '.express-wishlist input.add-to-wishlist').click( function() {
         jQuery( this ).tooltipster('content','<?php echo $this->__("Remove from my cravings"); ?>');
     }
 });
+</script>
