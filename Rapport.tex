@@ -210,10 +210,30 @@ Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de
       \lstinputlisting[language=HTML, firstline=1, lastline=41]{global_loan_simulator_2.html}
       Pour finir j'ai eu a adapter le style du simulteur car le client souhaitait un style différent des simulateurs habituels j'ai intégré un peu de CSS3 afin d'ajuster l'affichage. Une fois le développement terminé j'ai envoyé le lien au client pour qu'il puisse effectuer ses tests et nous faire un retour sur ce qui avait été effectué. Nous travaillons aussi avec un autre prestataire du client qui était en charge de l'intégration sur Facebook, il fallait donc aussi voir avec eux si tout était bon. Le client était satisfait et après quelques ajustement de compatibilité avec IE nous avons pu passer le simulateur en production afin de fournir l'URL final pour l'intégration d'une iframe sur la page Facebook. C'est à ce moment qu'un problème inatendu est arrivé car Facebook n'autorise l'intégration de lien uniquement en HTTPS or le site bfm.fr utilise HTTP, il donc fallu développer une configuration au niveau du serveur ainf de réécrire les demande en HTTP vers HTTPS mais uniquement pour la page du simulateur que nous venions de développer car le client ne souhaitait pas que tout son site soit en HTTPS pour le moment. Une fois les tests effectués en interne nous avons pu transmettre la configuration a mettre en place sur les serveurs de production et tout était fonctionnel.
       \lstinputlisting[language=bash, firstline=1, lastline=14]{global_loan_simulator_3.txt}
+      \begin{figure}
+	\center
+	\includegraphics[width=\textwidth]{images/global_simulator1.png} 
+	\includegraphics[width=\textwidth]{images/global_simulator2.png} 
+	\caption{Simulateur global de prêt}
+	\label{global_simulator1}
+      \end{figure}
       \paragraph*{Convertir un simulateur d'épargne flash vers une version en HTML5/JavaScript}
       Pour développer ce simulateur j'ai pu reprendre du code existant et l'adapter aux besoins précis de ce cas. Le code est composé en majorité de JavaScript avec le framexork jQuery afin d'afficher le simulateur et de traiter l'intéraction avec l'utilisateur. Une partie de PHP propre à EzPublish est aussi présente afin de récupérer depuis le back-office les données choisis pour les taux d'épargnes. Ceci étant configurable j'ai là aussi créé une classe propre à ce type de simulateur et j'ai ensuite modifié le code pour récupérer les bonnes valeurs. Il n'y a pas eu de difficultés majeurs avec cette fonctionnalité car je me basais sur de l'existant il fallait donc juste faire attention à ne récupérer que le nécessaire et ensuite la partie la plus longue était d'adapter l'affichage pour ressembler à la version originale en flash, ce que j'ai réalisé en CSS (cf. Annexe 1 page \pageref{annexe1}).
+      \begin{figure}
+	\center
+	\includegraphics[width=\textwidth]{images/simu_epargne1.png} 
+	\includegraphics[width=\textwidth]{images/simu_epargne2.png} 
+	\caption{Simulateur d'épargne}
+	\label{epargne_simulator}
+      \end{figure}
       \paragraph*{Développer un template intégré à EzPublish pour la création de landing page et réaliser un exemple en s'inspirant de l'existant}
       Dans le cadre de la création de landing page le client avait l'habitude de développer des pages à part hors du CMS puis de les déposer sur le serveur. Ceci pose problème pour la maintenance et rend la page non contribuable depuis le back-office d'EzPublish. J'ai donc commencé par créé une nouvelle classe dans EzPublish pour les landing page et j'ai ensuite codé un nouveau layout avec uniquement les entêtes de la page et la structure HTML. Le contenu de la page devant être entièrement contribuable depuis le back-office le code était assé simple et consistait juste à récupérer les données. Afin de vérifier le bon fonctionnement j'ai intégrer les landing page existentes directement dans le CMS.
+      \begin{figure}
+	\center
+	\includegraphics[width=\textwidth]{images/landing_page1.png} 
+	\caption{Landing page}
+	\label{landing_page}
+      \end{figure}
       \paragraph*{Développer un nouvel élément de formulaire permettant la redirection vers une page produit existant et transmettant les données déjà saisies par l'utilisateur}
       Ce développement était un des plus complexes à réaliser car presque tous les éléments devaient être configurables depuis le back-office et les données capables de passer d'un formulaire à l'autre. J'ai donc commencé par créer la classe dans EzPublish avec un bouton radio oui/non afin de lancer la redirection vers un formulaire existant. Ensuite un champ pour sélectionner le formulaire vers lequel pointer et un champ pour le message à afficher lors de la redirection. 
       J'ai ensuite créé le type d'élément à ajouter dans les formulaires que j'ai nommé «Produit Existant». C'est ici que l'essentiel du code s'est écrit, l'idée étant de récupérer les questions du formulaire vers lequel on pointe puis de comparer si les champs existent aussi dans le formulaire actuel. Si tel est le cas alors je transmet les données saisies par l'utilisateur lors de la redirection si celle-ci est actionnée. 
@@ -222,8 +242,26 @@ Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de
       Encore une fois la deuxième partie du développement s'est effectuée en JavaScript avec le framework jQuery. Je devais récupérer les donées saisies par l'utilisateur à chaque fois qu'il quittait un champ puis les transmettre dans les champs récupérés cachés du formulaire vers lequel on pointe. Ensuite on vérifie si l'utilisateur choisi l'option «Produit Existant» et si tel est le cas on affiche la popin avec le message indiquant la redirection vers le nouveau formulaire tout en transmettant les données déjà saisies (cf. Annexe 2 page \pageref{annexe2}).
       \paragraph*{Développer une page Web à disposition des téléconseillers intégrant une page d’orientation vers les différentes simulation de prêts personnels et une fonctionnalité d’envoi de mail type intégrant un lien vers une simulation avec des paramètres intégrés dans l’URL}
       Cette page se décompose en deux parties, il en sera donc de même pour le code. Dans un premier temps une section où l'on choisie le prêt que l'on souhaite puis on indique le montant et la durée de celui-ci et enfin on le simule. Ceci génère une URL avec les paramètres intégrés et ouvre une popin avec le simulateur et les valeurs choisies. Le sélecteur de prêt se génère en récupérant les données du back-office qui est configurable en choisissant les prêts à intégrer. Ensuite avec du Javascript on récupère les valeurs saisies par l'utilisateur et on concatène celles-ci à l'URL originale du simulateur pour en former une nouvelle intégrant ces paramètres. 
+      \begin{figure}
+	\center
+	\includegraphics[width=\textwidth]{images/page_teleconseille1.png}  
+	\caption{Pages téléconseillers formulaire}
+	\label{page_teleconseille_formulaire}
+      \end{figure}
       La deuxième section de cette page est un formulaire qui récupère toujours en JavaScript les données saisies pour la simulation plus haut ainsi que l'URL générée et permet de remplir les coordonnées du destinataire et de lui envoyer toutes les informations par mail. Ce mail devant être configurable dans le back-office et offrir la possibilité de récupérer les informations saisies par l'utilisateurs et de les réintégrer dans le mail aussi bien pour l'utilisateur que pour le webmaster. 
       Nous avons rencontré des problèmes de comlptabilité avec IE pour l'ouverture de la popin intégrant le simulateur, en effet le code initial était compatible avec Chrome et Firefox mais pas avec IE9 il a donc fallu le repenser afin de le rendre fonctionnelle sous tous les navigateurs.
+      \begin{figure}
+	\center
+	\includegraphics[width=\textwidth]{images/page_teleconseille2.png} 
+	\caption{Pages téléconseillers popin simulation}
+	\label{page_teleconseille_popin_simulation}
+      \end{figure}
+      \begin{figure}
+	\center
+	\includegraphics[width=\textwidth]{images/page_teleconseille3.png} 
+	\caption{Pages téléconseillers formulaire préremplie}
+	\label{page_teleconseille_formulaire_prerempli}
+      \end{figure}
     \subsection*{Bilan du projet}
     \addcontentsline{toc}{subsection}{Bilan du projet}%Ajout de l'élément dans le sommaire
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neque, at lacinia tellus rhoncus sed. Aliquam erat volutpat. Sed in facilisis dolor. Nam gravida purus vel ante auctor, non venenatis mauris scelerisque. Maecenas odio nunc, dapibus eu varius ac, dapibus non diam. Nam a ligula sit amet velit porta auctor. Vestibulum vel luctus eros. Sed vestibulum neque tristique, fringilla felis sed, pharetra dui. Nulla facilisi. Aliquam viverra velit nulla, ut placerat purus auctor vitae. Aenean vitae mauris tristique metus placerat ultrices vel ac magna. Vestibulum massa leo, faucibus nec tincidunt vitae, bibendum vel tortor. Aliquam erat volutpat.
