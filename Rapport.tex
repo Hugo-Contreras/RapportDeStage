@@ -179,14 +179,13 @@ Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de
 
 	\item[Copie de l'arborescence] J'ai commencé par copier l'arborescence des fichiers du site français déjà existant en utilisant un script développé par Smile afin de déclarer à EzPublish la création d'un nouveau site et de pouvoir l'administrer dans le back-office. J'ai ensuite modifié les fichiers de configuration du site afin d'indiquer les nouvelles URL correspondantes aux nouveaux sites ainsi que les paramètres de langues. La particularité étant la présence de plusieurs fichiers de configuration correspondant chacun à une étape du développement à savoir local, recette et production. Pour chaque cas le fichier de configuration doit correspondre au back-office de l'étape correspondante.  
 	\item[Pousser en recette] Une fois mon travail réalisé et testé en local je l'ai envoyé en recette afin que le client puisse y avoir accès et puisse vérifier que cela lui convenait. Pour réaliser ceci, là aussi des scripts ont été développés par Smile facilitant cette tâche. Ceci étant fait il reste à avertir le client via Redmine que le développement est terminé et qu'il doit nous faire des retours en vue d'éventuelles modifications à apporter.
-	\begin{figure}
-	\center
+	\begin{center}
 	\includegraphics[width=200]{images/DDTH_home_be_fr.png} 
 	\includegraphics[width=200]{images/DDTH_home_be_nl.png} 
 	\includegraphics[width=200]{images/DDTH_home_ru.png} 
-	\caption{Nouveaux sites mobiles (2 pour la belgique et 1 pour la russie)}
+	\captionof{figure}{Nouveaux sites mobiles (2 pour la belgique et 1 pour la russie)}
 	\label{DDTH_home}
-	\end{figure}
+	\end{center}
 	\item[Corriger les bugs] Une grosse partie du travail consiste en la correction de bugs détecté par le client. J'ai notamment eu des modifications à apporter en terme d'affichage car les traductions dans les différents langages changent les tailles des éléments et crées des problèmes. Ceci consistait simplement en la modification des propriétés CSS pour adapter l'affichage. Des fichiers de traductions ont aussi dû être créé pour leur permettre de traduire les textes. Des fichiers pdf contenant les notices des produits ne se généraient plus sur les nouveaux sites créés, il a donc fallu modifier le code PHP pour s'adapter à ses nouveaux sites. 
 	\item[Validation par le client et livraison en production] Une fois que le client a validé le travail, je suis passé à la livraison en production de la même manière que pour la recette, en utilisant un script qui facilite la chose et qui prend juste en paramètre le numéro des commits à livrer. Que ce soit pour la livraison en recette ou en production il faut aussi reporter les modifications effectuées sur le back-office local vers celui de recette et de production. Une fois la livraison effectuée j'ai vérifié le bon fonctionnement du code mis en place et qu'aucun bug ne s'était glissé. Après le client peut toujours remonter un problème via Redmine, j'ai donc la responsabilité d'être à l'écoute au cas où un problème surgirait ou si une autre modification devait être apportée.  
       
@@ -221,58 +220,42 @@ Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de
       \lstinputlisting[language=HTML, firstline=1, lastline=41]{global_loan_simulator_2.html}
       Pour finir j'ai eu a adapter le style du simulteur car le client souhaitait un style différent des simulateurs habituels j'ai intégré un peu de CSS3 afin d'ajuster l'affichage. Une fois le développement terminé j'ai envoyé le lien au client pour qu'il puisse effectuer ses tests et nous faire un retour sur ce qui avait été effectué. Nous travaillons aussi avec un autre prestataire du client qui était en charge de l'intégration sur Facebook, il fallait donc aussi voir avec eux si tout était bon. Le client était satisfait et après quelques ajustement de compatibilité avec IE nous avons pu passer le simulateur en production afin de fournir l'URL final pour l'intégration d'une iframe sur la page Facebook. C'est à ce moment qu'un problème inatendu est arrivé car Facebook n'autorise l'intégration de lien uniquement en HTTPS or le site bfm.fr utilise HTTP, il donc fallu développer une configuration au niveau du serveur ainf de réécrire les demande en HTTP vers HTTPS mais uniquement pour la page du simulateur que nous venions de développer car le client ne souhaitait pas que tout son site soit en HTTPS pour le moment. Une fois les tests effectués en interne nous avons pu transmettre la configuration a mettre en place sur les serveurs de production et tout était fonctionnel.
       \lstinputlisting[language=bash, firstline=1, lastline=14]{global_loan_simulator_3.txt}
-      \begin{figure}
-	\center
+      \begin{center}
 	\includegraphics[width=\textwidth]{images/global_simulator1.png} 
 	\includegraphics[width=\textwidth]{images/global_simulator2.png} 
-	\caption{Simulateur global de prêt}
+	\captionof{figure}{Simulateur global de prêt}
 	\label{global_simulator1}
-      \end{figure}
+      \end{center}
       \paragraph*{Convertir un simulateur d'épargne flash vers une version en HTML5/JavaScript}
-      Pour développer ce simulateur j'ai pu reprendre du code existant et l'adapter aux besoins précis de ce cas. Le code est composé en majorité de JavaScript avec le framexork jQuery afin d'afficher le simulateur et de traiter l'intéraction avec l'utilisateur. Une partie de PHP propre à EzPublish est aussi présente afin de récupérer depuis le back-office les données choisis pour les taux d'épargnes. Ceci étant configurable j'ai là aussi créé une classe propre à ce type de simulateur et j'ai ensuite modifié le code pour récupérer les bonnes valeurs. Il n'y a pas eu de difficultés majeurs avec cette fonctionnalité car je me basais sur de l'existant il fallait donc juste faire attention à ne récupérer que le nécessaire et ensuite la partie la plus longue était d'adapter l'affichage pour ressembler à la version originale en flash, ce que j'ai réalisé en CSS (cf. Annexe 1 page \pageref{annexe1}).
-      \begin{figure}
-	\center
+      Pour développer ce simulateur j'ai pu reprendre du code existant et l'adapter aux besoins précis de ce cas. Le code est composé en majorité de JavaScript avec le framexork jQuery afin d'afficher le simulateur et de traiter l'intéraction avec l'utilisateur. Une partie de PHP propre à EzPublish est aussi présente afin de récupérer depuis le back-office les données choisis pour les taux d'épargnes. Ceci étant configurable j'ai là aussi créé une classe propre à ce type de simulateur et j'ai ensuite modifié le code pour récupérer les bonnes valeurs. Il n'y a pas eu de difficultés majeurs avec cette fonctionnalité car je me basais sur de l'existant il fallait donc juste faire attention à ne récupérer que le nécessaire et ensuite la partie la plus longue était d'adapter l'affichage pour ressembler à la version originale en flash, ce que j'ai réalisé en CSS (cf. Annexe Code CSS simulateur d'épargne page \pageref{code_CSS_simulateur_d_epargne}).
+      \begin{center}
 	\includegraphics[width=\textwidth]{images/simu_epargne1.png} 
 	\includegraphics[width=\textwidth]{images/simu_epargne2.png} 
-	\caption{Simulateur d'épargne}
+	\captionof{figure}{Simulateur d'épargne}
 	\label{epargne_simulator}
-      \end{figure}
+      \end{center}
       \paragraph*{Développer un template intégré à EzPublish pour la création de landing page et réaliser un exemple en s'inspirant de l'existant}
       Dans le cadre de la création de landing page le client avait l'habitude de développer des pages à part hors du CMS puis de les déposer sur le serveur. Ceci pose problème pour la maintenance et rend la page non contribuable depuis le back-office d'EzPublish. J'ai donc commencé par créé une nouvelle classe dans EzPublish pour les landing page et j'ai ensuite codé un nouveau layout avec uniquement les entêtes de la page et la structure HTML. Le contenu de la page devant être entièrement contribuable depuis le back-office le code était assé simple et consistait juste à récupérer les données. Afin de vérifier le bon fonctionnement j'ai intégrer les landing page existentes directement dans le CMS.
-      \begin{figure}
-	\center
+      \begin{center}
 	\includegraphics[width=\textwidth]{images/landing_page1.png} 
-	\caption{Landing page}
+	\captionof{figure}{Landing page}
 	\label{landing_page}
-      \end{figure}
+      \end{center}
       \paragraph*{Développer un nouvel élément de formulaire permettant la redirection vers une page produit existant et transmettant les données déjà saisies par l'utilisateur}
       Ce développement était un des plus complexes à réaliser car presque tous les éléments devaient être configurables depuis le back-office et les données capables de passer d'un formulaire à l'autre. J'ai donc commencé par créer la classe dans EzPublish avec un bouton radio oui/non afin de lancer la redirection vers un formulaire existant. Ensuite un champ pour sélectionner le formulaire vers lequel pointer et un champ pour le message à afficher lors de la redirection. 
       J'ai ensuite créé le type d'élément à ajouter dans les formulaires que j'ai nommé «Produit Existant». C'est ici que l'essentiel du code s'est écrit, l'idée étant de récupérer les questions du formulaire vers lequel on pointe puis de comparer si les champs existent aussi dans le formulaire actuel. Si tel est le cas alors je transmet les données saisies par l'utilisateur lors de la redirection si celle-ci est actionnée. 
       La première partie de récupération des champs existant sur le formulaire distant se fait grâce aux méthodes fournient par le CMS et on créé ainsi des champs cachés qui permettront la transmission des données. 
       \lstinputlisting[language=php, firstline=1, lastline=24]{question_conditionnelle_1.php}
-      Encore une fois la deuxième partie du développement s'est effectuée en JavaScript avec le framework jQuery. Je devais récupérer les donées saisies par l'utilisateur à chaque fois qu'il quittait un champ puis les transmettre dans les champs récupérés cachés du formulaire vers lequel on pointe. Ensuite on vérifie si l'utilisateur choisi l'option «Produit Existant» et si tel est le cas on affiche la popin avec le message indiquant la redirection vers le nouveau formulaire tout en transmettant les données déjà saisies (cf. Annexe 2 page \pageref{annexe2}).
+      Encore une fois la deuxième partie du développement s'est effectuée en JavaScript avec le framework jQuery. Je devais récupérer les donées saisies par l'utilisateur à chaque fois qu'il quittait un champ puis les transmettre dans les champs récupérés cachés du formulaire vers lequel on pointe. Ensuite on vérifie si l'utilisateur choisi l'option «Produit Existant» et si tel est le cas on affiche la popin avec le message indiquant la redirection vers le nouveau formulaire tout en transmettant les données déjà saisies (cf. Annexe Transmission de données d'un formulaire page \pageref{transmission_de_donnees_d_un_formulaire}).
       \paragraph*{Développer une page Web à disposition des téléconseillers intégrant une page d’orientation vers les différentes simulation de prêts personnels et une fonctionnalité d’envoi de mail type intégrant un lien vers une simulation avec des paramètres intégrés dans l’URL}
       Cette page se décompose en deux parties, il en sera donc de même pour le code. Dans un premier temps une section où l'on choisie le prêt que l'on souhaite puis on indique le montant et la durée de celui-ci et enfin on le simule. Ceci génère une URL avec les paramètres intégrés et ouvre une popin avec le simulateur et les valeurs choisies. Le sélecteur de prêt se génère en récupérant les données du back-office qui est configurable en choisissant les prêts à intégrer. Ensuite avec du Javascript on récupère les valeurs saisies par l'utilisateur et on concatène celles-ci à l'URL originale du simulateur pour en former une nouvelle intégrant ces paramètres. 
-      \begin{figure}
-	\center
+      \begin{center}
 	\includegraphics[width=\textwidth]{images/page_teleconseille1.png}  
-	\caption{Pages téléconseillers formulaire}
+	\captionof{figure}{Pages téléconseillers formulaire}
 	\label{page_teleconseille_formulaire}
-      \end{figure}
+      \end{center}
       La deuxième section de cette page est un formulaire qui récupère toujours en JavaScript les données saisies pour la simulation plus haut ainsi que l'URL générée et permet de remplir les coordonnées du destinataire et de lui envoyer toutes les informations par mail. Ce mail devant être configurable dans le back-office et offrir la possibilité de récupérer les informations saisies par l'utilisateurs et de les réintégrer dans le mail aussi bien pour l'utilisateur que pour le webmaster. 
-      Nous avons rencontré des problèmes de comlptabilité avec IE pour l'ouverture de la popin intégrant le simulateur, en effet le code initial était compatible avec Chrome et Firefox mais pas avec IE9 il a donc fallu le repenser afin de le rendre fonctionnelle sous tous les navigateurs.
-      \begin{figure}
-	\center
-	\includegraphics[width=\textwidth]{images/page_teleconseille2.png} 
-	\caption{Pages téléconseillers popin simulation}
-	\label{page_teleconseille_popin_simulation}
-      \end{figure}
-      \begin{figure}
-	\center
-	\includegraphics[width=\textwidth]{images/page_teleconseille3.png} 
-	\caption{Pages téléconseillers formulaire préremplie}
-	\label{page_teleconseille_formulaire_prerempli}
-      \end{figure}
+      Nous avons rencontré des problèmes de comlptabilité avec IE pour l'ouverture de la popin intégrant le simulateur, en effet le code initial était compatible avec Chrome et Firefox mais pas avec IE9 il a donc fallu le repenser afin de le rendre fonctionnelle sous tous les navigateurs (cf. Annexe Illustrations pages téléconseillers page \pageref{illustrations_pages_teleconseillers}).
     \subsection*{Bilan du projet}
     \addcontentsline{toc}{subsection}{Bilan du projet}%Ajout de l'élément dans le sommaire
     Pour ce second travail avec EzPublish j'ai eu l'occasion d'exercer sur un projet d'envergure et de longue haleine. En effet BFM étant un client de TMA de nombreuses corrections, améliorations ou corrections sont sans cesses à apporter. Ceci offre une vrai diversité dans le projet et le rend donc très intéressant en sois mais aussi pour se former sur la technologie car il permet de couvrir une grande partie des possibilités du CMS. D'un point de vu relationnel ce projet m'a permis d'aborder un nouvel aspect du métier d'ingénieur, à savoir la relation avec le client. J'ai été amené à plusieurs reprises à avoir des rendez-vous téléphoniques afin de discuter de l'avancement des tâches, des modifications à effectuer ou même parfois d'expliquer certains points techniques au client pour qu'il puisse configurer le site à ses souhaits. Pour ce qui est du technique, je suis rentré véritablement dans le coeur du métier avec du PHP, du JavaScript et du style. Autant de langages peut vu en cours mais relativement simple à prendre en main que ce soit en s'inspirant de l'existant ou en recherchant sur internet. Le CMS lui aussi m'était inconnue mais j'ai pu compter sur les autres membres du projet pour m'aider et me conseiller ce qui m'a permis d'appréhender les tâches à effectuer dans de bonnes conditions. J'ai donc beaucoup appris sur ce projet que ce soit sur le plan humain ou technique et même si par la suite je vais être amené à changer de technologie et passer sur du e-commerce avec Magento, il n'en reste pas moins que les langages du WEB sont les mêmes notamment le JavaScript, CSS ou HTML et que PHP est aussi le langage serveur utilisé. Je noterai quand même quelques difficultés rencontrées au cours de ce projet, par exemple les appels au client qui n'étaient pas simple au début par manque d'expérience dans ce domaine. Il est difficile de se mettre à la portée de la personne que nous avons au téléphone et d'être clair, précis et concis quand nous expliquons le problème rencontré ou les actions à effectuer. Enfin la difficulté technique majeure de ce projet et qui à fortiori à engendrer une complication de communication, est que nous n'avions pas accès aux serveurs de productions et de pré-production comme je l'ai expliqué plus tôt. Ceci a rendu difficile les processus de livraison où le client lui même devait effectuer certaines manipulations et nous a obligé à être très précis et patient dans nos explications. Parfois nous avions des bugs que nous n'arrivions pas à reproduire en interne et ne pouvions pas voir ce qu'il se passait dans les logs rendant la tâche de debug compliquée. Bilan positif encore une fois et qui me motive pour le prochain projet qui m'attend avec en plus la découverte d'une nouvelle technologie, Magento.
@@ -296,12 +279,11 @@ Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de
     \subsection*{Bilan du projet}
     \addcontentsline{toc}{subsection}{Bilan du projet}%Ajout de l'élément dans le sommaire
     Plus qu'un projet en tant que tel j'ai découvert par le biais de cette mission une autre facette du métier. En effet il n'est pas rare que les clients demandent pour ce genre d'expertise afin de savoir approximativement la faisabilité d'une évolution et surtout son coût. Car le POC a aussi pour vocation de donner un ordre d'idée du temps nécessaire à la réalisation et donc le budget à y consacrer. C'est donc un bon moyen pour le client de se rendre compte si l'investissement en vaut la peine ou s'il est préférable de se passer de ce développement et de consacrer le budget à autre chose. D'un point de vu purement technique cela m'a permis de prendre en main Magento et de bien assimiler les notions de thème, de layout et de template qui sont des aspects clés des projets où je serai amené à travailler par la suite. 
-    \begin{figure}
-      \center
+    \begin{center}
       \includegraphics[width=\textwidth]{images/new_responsive_magento_theme.png} 
-      \caption{Theme responsive Magento 1.14 demo}
+      \captionof{figure}{Theme responsive Magento 1.14 demo}
       \label{responsive_theme_magento}
-    \end{figure}
+    \end{center}
 
     \newpage
     
@@ -322,9 +304,9 @@ Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de
     \subsection*{Mes réalisations}
     \addcontentsline{toc}{subsection}{Mes réalisations}%Ajout de l'élément dans le sommaire
     	\paragraph*{Refonte du template et du style de divers pages du site}
-	Il s'agit pour moi de mon premier gros projet en utilisant Magento, j'ai donc commencé par réaliser la refonte des pages les plus simples à savoir le header et le footer. J'ai donc redesigné ces pages en suivant les maquettes graphiques fournient pas le client. Il y avait notamment des changements de logos, d'icônes, de couleurs et de polices mais aussi quelques modifications fonctionnelles comme le changement des liens présents dans le header et le menu de navigation. J'ai eu par exemple à ajouter des champs de le back-office permettant au contributeur d'ajouter une image et lien de promotion directement dans le menu. Ceci doit être configurable, j'ai donc commencé par développer un « installer » qui permet l'ajout d'attributs dans le back-office (par modification de la base de données), un pour le choix d'une image et l'autre pour le lien vers lequel pointe cette image (cf. Annexe 3 page \pageref{annexe3}). J'ai ensuite modifié le template du menu afin de faire appel à ces attributs et ainsi afficher le contenu ajouté. Finalement j'ai adapté le style pour respecter la mise en forme souhaitée par le client. Pour le footer la partie mise en forme était assez simple, du style CSS sans complexité, la fonctionnalité intéressante réside dans la récupération des liens que l'on affiche dans celui-ci. Un attribut position avait été ajouté et je l'ai donc utilisé afin d'offrir la possibilité au contributeur de choisir dans quelle partie du footer il souhaitait positionner le lien. Il ne me restait plus qu'à mettre en place une boucle dans le template qui parcoure les éléments et récupère leur lien pour les afficher.
+	Il s'agit pour moi de mon premier gros projet en utilisant Magento, j'ai donc commencé par réaliser la refonte des pages les plus simples à savoir le header et le footer. J'ai donc redesigné ces pages en suivant les maquettes graphiques fournient pas le client. Il y avait notamment des changements de logos, d'icônes, de couleurs et de polices mais aussi quelques modifications fonctionnelles comme le changement des liens présents dans le header et le menu de navigation. J'ai eu par exemple à ajouter des champs de le back-office permettant au contributeur d'ajouter une image et lien de promotion directement dans le menu. Ceci doit être configurable, j'ai donc commencé par développer un « installer » qui permet l'ajout d'attributs dans le back-office (par modification de la base de données), un pour le choix d'une image et l'autre pour le lien vers lequel pointe cette image (cf. Annexe Installeur Magento pour ajouter un attribut au BO page \pageref{installeur_Magento_pour_ajouter_un_attribut_au_BO}). J'ai ensuite modifié le template du menu afin de faire appel à ces attributs et ainsi afficher le contenu ajouté. Finalement j'ai adapté le style pour respecter la mise en forme souhaitée par le client. Pour le footer la partie mise en forme était assez simple, du style CSS sans complexité, la fonctionnalité intéressante réside dans la récupération des liens que l'on affiche dans celui-ci. Un attribut position avait été ajouté et je l'ai donc utilisé afin d'offrir la possibilité au contributeur de choisir dans quelle partie du footer il souhaitait positionner le lien. Il ne me restait plus qu'à mettre en place une boucle dans le template qui parcoure les éléments et récupère leur lien pour les afficher.
 	\lstinputlisting[language=html, firstline=1, lastline=19]{footer_recuperation_darjeeling.html}
-	Par la suite j'ai réalisé la page « Mes envies » qui regroupe les produits sélectionnés par l'utilisateur et lui permet soit de les ajouter à son panier soit de les retirer de cette liste. J'ai donc redesigné la page ainsi que les blocs qui affiche les produits et implémenté un script pour l'affichage d'info bulle custom. Il s'agit uniquement de développement front, du templating et du style mais aussi du JavaScript. Sachant que cette info bulle devrait être présente à plusieurs endroits dans le site j'ai mis en place un petit script jQuery permettant de vérifier si le produit est déjà dans la liste « Mes envies » au quel cas on propose d'enlever le produit. Dans le cas contraire l'info bulle affiche « Ajouter à mes envies ». Ce scipt doit être capable de réagir au clique sur le bouton et au chargement de la page, j'utilise pour ça les observateurs jQuery (cf. Annexe 4 page \pageref{annexe4}).
+	Par la suite j'ai réalisé la page « Mes envies » qui regroupe les produits sélectionnés par l'utilisateur et lui permet soit de les ajouter à son panier soit de les retirer de cette liste. J'ai donc redesigné la page ainsi que les blocs qui affiche les produits et implémenté un script pour l'affichage d'info bulle custom. Il s'agit uniquement de développement front, du templating et du style mais aussi du JavaScript. Sachant que cette info bulle devrait être présente à plusieurs endroits dans le site j'ai mis en place un petit script jQuery permettant de vérifier si le produit est déjà dans la liste « Mes envies » au quel cas on propose d'enlever le produit. Dans le cas contraire l'info bulle affiche « Ajouter à mes envies ». Ce scipt doit être capable de réagir au clique sur le bouton et au chargement de la page, j'utilise pour ça les observateurs jQuery (cf. Annexe Script jQuery d'ajustement d'une info bulle page \pageref{script_jQuery_d_ajustement_d_une_info_bulle}).
 	\paragraph*{Refonte de la liste produits et de ses filtres}
 	La liste produits est un template appelé à différents endroits du site notamment lorsque l'on sélectionne une catégorie particulière ou que l'on effectue une recherche. Ce template est chargé de lister les produits comme son nom l'indique, de mettre en place une pagination et de proposer divers filtres pour trier les résultats. Pour ce qui est de l'affichage j'ai mis en place un nouveau design de blocs sur 3 colonnes respectant les maquettes. Le client souhaitait afficher 48 produits par pages et proposer un lien en bas permettant de charger les 48 produits suivants. J'ai donc implémenté cette fonctionnalité par le biais d'un appel AJAX qui charge les éléments sans avoir à recharger toute la page. J'ai aussi adapté le template pour répondre à ces nouveaux besoins. Les blocs affichant les produits ont aussi été modifié en ajoutant de nouvelles fonctionnalités d'achat et de déplacement dans la liste de souhait. J'ai notamment utilisé le script développé et cité précédemment. Concernant la partie filtre j'ai repris le fonctionnement qui était déjà en place en terme de fonctionnalités et j'ai ajouté des éléments de design en plus de la refonte graphique. Ceci s'est traduis par l'utilisation de JavaScript pour mettre en place une liste déroulante permettant d'afficher ou non le détail des filtres. Ainsi qu'un scipt qui regarde qu'elles filtres sont actifs au changement ou rechargement de la page et les réouvre directement dans le but améliorer l'expérience utilisateur. 
 	\lstinputlisting[language=html, firstline=1, lastline=31]{script_accordion_active.html}
@@ -372,21 +354,46 @@ Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de
 \chapter*{Annexes}
 \thispagestyle{\chead{}}
 \addcontentsline{toc}{chapter}{Annexes}%Ajout de l'élément dans le sommaire
-  \section*{Annexe 1}
-  \addcontentsline{toc}{section}{Annexe 1}%Ajout de l'élément dans le sommaire
-  \label{annexe1}
+  \section*{Annexe Code CSS simulateur d'épargne}
+  \addcontentsline{toc}{section}{Annexe Code CSS simulateur d'épargne}%Ajout de l'élément dans le sommaire
+  \label{code_CSS_simulateur_d_epargne}
   \lstinputlisting[language=HTML, firstline=1, lastline=68]{saving_simulator_html5.html}
-  \section*{Annexe 2}
-  \addcontentsline{toc}{section}{Annexe 2}%Ajout de l'élément dans le sommaire
-  \label{annexe2}
+  
+    \newpage
+  
+  \section*{Annexe Transmission de données d'un formulaire}
+  \addcontentsline{toc}{section}{Annexe Transmission de données d'un formulaire}%Ajout de l'élément dans le sommaire
+  \label{transmission_de_donnees_d_un_formulaire}
   \lstinputlisting[language=HTML, firstline=1, lastline=63]{question_conditionnelle_2.html}
-  \section*{Annexe 3}
-  \addcontentsline{toc}{section}{Annexe 3}%Ajout de l'élément dans le sommaire
-  \label{annexe3}
+  
+    \newpage
+  
+  \section*{Annexe Illustrations pages téléconseillers}
+  \addcontentsline{toc}{section}{Annexe Illustrations pages téléconseillers}%Ajout de l'élément dans le sommaire
+  \label{illustrations_pages_teleconseillers}
+  \begin{center}
+      \includegraphics[width=\textwidth]{images/page_teleconseille2.png} 
+      \captionof{figure}{Pages téléconseillers popin simulation}
+      \label{page_teleconseille_popin_simulation}
+  \end{center}
+  \begin{center}
+    \includegraphics[width=\textwidth]{images/page_teleconseille3.png} 
+    \captionof{figure}{Pages téléconseillers formulaire préremplie}
+    \label{page_teleconseille_formulaire_prerempli}
+  \end{center}
+  
+    \newpage
+  
+  \section*{Annexe Installeur Magento pour ajouter un attribut au BO}
+  \addcontentsline{toc}{section}{Annexe Installeur Magento pour ajouter un attribut au BO}%Ajout de l'élément dans le sommaire
+  \label{installeur_Magento_pour_ajouter_un_attribut_au_BO}
   \lstinputlisting[language=php, firstline=1, lastline=51]{installer_darjeeling.php}
-  \section*{Annexe 4}
-  \addcontentsline{toc}{section}{Annexe 4}%Ajout de l'élément dans le sommaire
-  \label{annexe4}
+  
+    \newpage
+  
+  \section*{Annexe Script jQuery d'ajustement d'une info bulle}
+  \addcontentsline{toc}{section}{Annexe Script jQuery d'ajustement d'une info bulle}%Ajout de l'élément dans le sommaire
+  \label{script_jQuery_d_ajustement_d_une_info_bulle}
   \lstinputlisting[language=html, firstline=1, lastline=31]{script_tooltip.html}
 %Table des illustrations
 \listoffigures
