@@ -46,6 +46,9 @@
 \titleformat{\subsection}[hang]{\Large\textcolor{soft-dark}}{\thesubsection}{2pc}{}[]
 \titleformat{\paragraph}[hang]{\sffamily\bfseries}{\theparagraph}{2pc}{}[]
 
+%Changement du format des titres des figures
+\usepackage[font={footnotesize,it,sf}]{caption}
+
 %Changement du comportement de la mise en avant d'un élément
 \renewcommand{\emph}{\bfseries}
 
@@ -176,6 +179,14 @@ Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de
 
 	\item[Copie de l'arborescence] J'ai commencé par copier l'arborescence des fichiers du site français déjà existant en utilisant un script développé par Smile afin de déclarer à EzPublish la création d'un nouveau site et de pouvoir l'administrer dans le back-office. J'ai ensuite modifié les fichiers de configuration du site afin d'indiquer les nouvelles URL correspondantes aux nouveaux sites ainsi que les paramètres de langues. La particularité étant la présence de plusieurs fichiers de configuration correspondant chacun à une étape du développement à savoir local, recette et production. Pour chaque cas le fichier de configuration doit correspondre au back-office de l'étape correspondante.  
 	\item[Pousser en recette] Une fois mon travail réalisé et testé en local je l'ai envoyé en recette afin que le client puisse y avoir accès et puisse vérifier que cela lui convenait. Pour réaliser ceci, là aussi des scripts ont été développés par Smile facilitant cette tâche. Ceci étant fait il reste à avertir le client via Redmine que le développement est terminé et qu'il doit nous faire des retours en vue d'éventuelles modifications à apporter.
+	\begin{figure}
+	\center
+	\includegraphics[width=200]{images/DDTH_home_be_fr.png} 
+	\includegraphics[width=200]{images/DDTH_home_be_nl.png} 
+	\includegraphics[width=200]{images/DDTH_home_ru.png} 
+	\caption{Nouveaux sites mobiles (2 pour la belgique et 1 pour la russie)}
+	\label{DDTH_home}
+	\end{figure}
 	\item[Corriger les bugs] Une grosse partie du travail consiste en la correction de bugs détecté par le client. J'ai notamment eu des modifications à apporter en terme d'affichage car les traductions dans les différents langages changent les tailles des éléments et crées des problèmes. Ceci consistait simplement en la modification des propriétés CSS pour adapter l'affichage. Des fichiers de traductions ont aussi dû être créé pour leur permettre de traduire les textes. Des fichiers pdf contenant les notices des produits ne se généraient plus sur les nouveaux sites créés, il a donc fallu modifier le code PHP pour s'adapter à ses nouveaux sites. 
 	\item[Validation par le client et livraison en production] Une fois que le client a validé le travail, je suis passé à la livraison en production de la même manière que pour la recette, en utilisant un script qui facilite la chose et qui prend juste en paramètre le numéro des commits à livrer. Que ce soit pour la livraison en recette ou en production il faut aussi reporter les modifications effectuées sur le back-office local vers celui de recette et de production. Une fois la livraison effectuée j'ai vérifié le bon fonctionnement du code mis en place et qu'aucun bug ne s'était glissé. Après le client peut toujours remonter un problème via Redmine, j'ai donc la responsabilité d'être à l'écoute au cas où un problème surgirait ou si une autre modification devait être apportée.  
       
@@ -285,6 +296,12 @@ Ce rapport s’efforcera au mieux de donner à son lecteur une idée précise de
     \subsection*{Bilan du projet}
     \addcontentsline{toc}{subsection}{Bilan du projet}%Ajout de l'élément dans le sommaire
     Plus qu'un projet en tant que tel j'ai découvert par le biais de cette mission une autre facette du métier. En effet il n'est pas rare que les clients demandent pour ce genre d'expertise afin de savoir approximativement la faisabilité d'une évolution et surtout son coût. Car le POC a aussi pour vocation de donner un ordre d'idée du temps nécessaire à la réalisation et donc le budget à y consacrer. C'est donc un bon moyen pour le client de se rendre compte si l'investissement en vaut la peine ou s'il est préférable de se passer de ce développement et de consacrer le budget à autre chose. D'un point de vu purement technique cela m'a permis de prendre en main Magento et de bien assimiler les notions de thème, de layout et de template qui sont des aspects clés des projets où je serai amené à travailler par la suite. 
+    \begin{figure}
+      \center
+      \includegraphics[width=\textwidth]{images/new_responsive_magento_theme.png} 
+      \caption{Theme responsive Magento 1.14 demo}
+      \label{responsive_theme_magento}
+    \end{figure}
 
     \newpage
     
