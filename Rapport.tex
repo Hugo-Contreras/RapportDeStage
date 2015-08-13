@@ -143,7 +143,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neq
     
   \end{itemize}
   
-  Je reviendrai par la suite sur le rôle de l'IED et du développeur puisque cela correspond à mes fonctions en tant que stagiaire au sein de Smile.
+  Je reviendrai par la suite sur le rôle de l'IED puisque cela correspond à ma fonctions en tant que stagiaire au sein de Smile.
   
   \section{Agence de Bordeaux}
   A Bordeaux ce sont une quarantaine de collaborateurs, majoritairement ingénieurs, qui développent des applications Web utilisant les CMS\footnote{Content Management System, est un site web disposant de fonctionnalités de publication et offrant en particulier une interface d'administration permettant à un administrateur de site de créer ou organiser du contenu} open source (eZ Publish, Drupal), la solution de e-commerce Magento, mais aussi l’ensemble des solutions Open Source portées par Smile. Récemment le développent de projets Symfony 2\footnote{Framework libre et français écrit en PHP 5 destiné majoritairement aux professionnels du développement permettant de faciliter et d’accélérer la création d'un site web} est venu s'ajouter aux missions de l'agence de Bordeaux notamment du au fait de l'importance que prend ce framework\footnote{En programmation informatique, un framework ou structure logicielle est un ensemble cohérent de composants logiciels structurels, qui sert à créer les fondations ainsi que les grandes lignes de tout ou d’une partie d'un logiciel} PHP\footnote{Langage de programmation libre principalement utilisé pour produire des pages Web dynamiques. PHP est un langage orienté objet et a permis de créer un grand nombre de sites web célèbres, comme Facebook, YouTube, Wikipedia, Google,... Il est aujourd'hui considéré comme la base de la création des sites Internet dits dynamiques} sur le marché.\newline
@@ -157,14 +157,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neq
   
   Dans tous les cas j'avais un gros travail d'autoformation, dû au fait que je travaillais sur des technologies que nous n'avions pas abordé en cours à l'INSA. En plus de ça, des formations internes étaient proposées et c'était un plus pour moi d'y participer afin de faire évoluer mon bagage technique et ainsi devenir encore plus polyvalent. En effet la polyvalence est aussi un objectif chez Smile car tous les développeurs doivent être capable de gérer le front-end\footnote{Partie du site visible par les utilisateurs, il s'agit de l'interface entre l'utilisateur et le back-end}, le back-end\footnote{Partie du site non visible par les utilisateurs et s'exécutant côté serveur} et les aspects réseaux liés au projet. L'idée étant d'avoir des programmeurs full-stack\footnote{Développeur maîtrisant les principales technologies et les principaux langages de programmation actuellement utilisés afin d'intervenir à la fois sur le frond-end et le back-end des sites Internet} et acquérir une grande adaptabilité, ce qui est un plus quand on débute sur le marché de l'emploi.\newline
   
-      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    %
-    %
-    % Smile Ac
-    % Expliquer MVC lien vers les annexes
-    %
-    %
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  Afin d'aplanir les connaissances des nouveaux arrivant chez Smile, l'entreprise a mis en place une formation interne, la Smile Academy. On y aborde notamment la gestion de version avec SVN, l'utilisation de Linux, le langage PHP, les bonnes pratiques du Web, ... Un ensemble de prérequis indispensable au bon fonctionnement des projets car on y voit par exemple les process propre à Smile dans la gestion des projets. Cette formation de trois jours a eu lieu dans nos locaux à Bordeaux avec les nouveaux arrivants, nous étions six personnes à suivre la formation. Selon moi il s'agit d'une bonne initiative de la part du groupe, qui plus est le formateur est une personne d'expérience chez Smile cela nous permet de poser bon nombres de questions que ce soit sur les aspects techniques ou humains du métier.\newline
   
   Afin de faciliter la compréhension du rapport je me dois de détailler et d'expliquer certains outils utilisés chez Smile. Je vais commencer avec l'outil de gestion appelé Gescom dont le but est de répertorier le travail effectué par les différents collaborateurs au sein de Smile. L'idée étant qu'à minima toutes les fins de semaine chaque collaborateur impute le temps passé sur chacun de ses projets afin de pouvoir suivre ce que l'on facture au client. Ceci est un outil interne auquel seuls les collaborateurs de Smile ont accès à la différence du suivant Redmine. Nous nous en servons pour répertorier les projets et c'est ici que le client nous fais parvenir ses demandes sous forme de tickets. Ceux-ci sont ensuite chiffrés par le chef de projet puis affectés aux différents développeurs qui travaillent dessus tout en indiquant au client le temps passé, le reste à faire et tout ce dont le client pourrait avoir besoin. Lorsque nous travaillons nous utilisons un système de virtualisation afin de simuler la présence d'une machine par projet. Ce système appelé LXC\footnote{Linux Containers est un système de virtualisation, il est utilisé pour faire fonctionner des environnements Linux isolés les uns des autres dans des conteneurs partageant le même noyau et une plus ou moins grande partie du système hôte. Le conteneur apporte une virtualisation de l'environnement d'exécution (Processeur, Mémoire vive, réseau, système de fichier…) et non pas de la machine. Pour cette raison, on parle de « conteneur » et non de machine virtuelle.} nous permet d'avoir un conteneur par projet et s'avère très utile dès que nous souhaitons partager notre environnement de travail à un autre collaborateur car il suffit de packer sa LXC puis de la donner à une autre personne, il se retrouvera ainsi avec un environnement de travail identique au notre. Comme la plupart des SSII Smile utilise un gestionnaire de version\footnote{La gestion de versions consiste à maintenir l'ensemble des versions d'un ou plusieurs fichiers. Elle permet notamment d'accéder à l'historique des modifications (ce qui a été modifié, qui l'a modifié et quand la modification a eu lieu), de partager le code avec les différents contributeurs, de revenir à une ancienne version du fichier,...}, historiquement c'est SVN\footnote{Subversion est un logiciel de gestion de versions il fonctionne sur le mode client-serveur avec un serveur informatique centralisé et unique où se situent les fichiers constituant la référence (le « dépôt » ou « repository » en anglais)} qui était utilisé chez Smile et c'est celui-ci que j'ai pris en main dans les projets où je suis intervenu, mais il est à noter que Git\footnote{Git est un logiciel de gestion de versions décentralisé consistant à voir l'outil de gestion de versions comme un outil permettant à chacun de travailler à son rythme, de façon désynchronisée des autres, puis d'offrir un moyen à ces développeurs de s'échanger leur travaux respectifs. De fait, il existe plusieurs dépôts pour un même logiciel} fait son apparition sur de plus en plus de projets au sein du groupe.
   
@@ -309,15 +302,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neq
       \end{itemize}
     \subsection*{Mes réalisations}
     \addcontentsline{toc}{subsection}{Mes réalisations}%Ajout de l'élément dans le sommaire
-    J'ai donc commencé par récupérer la version correspondante à celle mise en place sur le site de Gifi (Magento 1.13), je l'ai installé sur ma LXC afin de pouvoir commencer le test. Ensuite j'ai copié le thème responsive de Magento 1.14 et je l'ai chargé depuis le back-office. Il s'agissait ensuite d'effectuer des tests de compatibilité pour voir si des modules natifs de Magento ne fonctionnait plus. Les fiches produits notamment ne s'affichait plus correctement car une fonction n'était plus déclaré au même endroit dans le code. J'ai donc remonté ces petits bugs et confirmé la faisabilité de ce « backportage » de thème. 
+    J'ai donc commencé par récupérer la version correspondante à celle mise en place sur le site de Gifi (Magento 1.13), je l'ai installé sur ma LXC afin de pouvoir commencer le test. Ensuite j'ai copié le thème responsive de Magento 1.14 et je l'ai chargé depuis le back-office. Il s'agissait ensuite d'effectuer des tests de compatibilité pour voir si des modules natifs de Magento ne fonctionnait plus. Les fiches produits notamment ne s'affichait plus correctement car une fonction n'était plus déclaré au même endroit dans le code. J'ai donc remonté ces petits bugs et confirmé la faisabilité de ce « backportage » de thème. J'en ai profité pour me former sur Magento en prévision de la formation et des projets à venir. Sachant que j'allais être amené à travailler sur le design et le templating de sites je me devais de bien assimiler la structure des pages de cette technologie. Comme on peut le voir sur le schéma ci-dessous une page est composée d'un layout qui regroupe les différents blocs et à l'intérieur de ces blocs nous avons des templates qui gèrent l'affichage. Dans ces templates on peut aussi trouver des helpers qui sont des méthodes (pouvant être issues de d'autres blocs) retournant des données.
     
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    %
-    %
-    % Reprendre schéma Smile Layout/Bloc/Template
-    %
-    %
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{center}
+      \includegraphics[width=\textwidth]{images/magento_page_design_structure.png}  
+      \captionof{figure}{Structure de base d'une page Magento}
+      \label{magento_page_design_structure}
+    \end{center}
     
     \subsection*{Bilan du projet}
     \addcontentsline{toc}{subsection}{Bilan du projet}%Ajout de l'élément dans le sommaire
@@ -436,21 +427,39 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neq
     \subsection*{Mes réalisations}
     \addcontentsline{toc}{subsection}{Mes réalisations}%Ajout de l'élément dans le sommaire
     	\paragraph*{Refonte de l'historique des commandes et de leurs détails}
-    	Nativement Magento propose aux clients un espace qui leur est réservé, un compte doit être préalablement créé par l'utilisateur pour pouvoir y accéder. Dans cet espace, il y retrouve notamment l'historique de ses commandes, passées ou en cours. Le client avait déjà redesigné cet espace lors de la version précédente, nous sommes donc loin de l'aspect natif. Cependant de nouvelles améliorations sont à apporter, en terme d'aspect, ce qui va être réalisé en suivant les maquettes graphique que nous fournient en prestataire du client. En terme de données à afficher aussi, car la nouvelle interface se veut plus épurée que l'existante. 
+    	Nativement Magento propose aux clients un espace qui leur est réservé, un compte doit être préalablement créé par l'utilisateur pour pouvoir y accéder. Dans cet espace, il y retrouve notamment l'historique de ses commandes, passées ou en cours. Le client avait déjà redesigné cet espace lors de la version précédente, nous sommes donc loin de l'aspect natif. Cependant de nouvelles améliorations sont à apporter, en terme d'aspect, ce qui va être réalisé en suivant les maquettes graphique que nous fournient en prestataire du client. En terme de données à afficher aussi, car la nouvelle interface se veut plus épurée que l'existante (cf. Annexe Illustration dashboard Snowleader page \pageref{SL_dashboard_customer}). 
     
-    	En terme de complexité, une des partie délicate a été le bouton de gauche (pentagone avec une croix à l'intérieur) que j'ai réalisé uniquement en CSS pour éviter de mettre une image et ainsi gagner en performance. Il faut en effet faire attention car le design original proposé par l'agence graphique est certes très jolie mais peut vite devenir problématique en terme de performance et d'implémentation. Pour le reste de ce tableau j'ai repris l'existant et joué avec le style car les donnés affichées sont restées les mêmes. La seule chose que j'ai ajouter c'est un lien vers une page d'impression, qui vérifie en PHP si le commande possède une facture, auquel cas le lien redirige vers la page d'impression de la facture et dans le cas contraire vers la page d'impression de la commande.
+    	En terme de complexité, une des partie délicate a été le bouton de gauche (pentagone avec une croix à l'intérieur) que j'ai réalisé uniquement en CSS pour éviter de mettre une image et ainsi gagner en performance. Il faut en effet faire attention car le design original proposé par l'agence graphique est certes très jolie mais peut vite devenir problématique en terme de performance et d'implémentation. Pour le reste de ce tableau j'ai repris l'existant et joué avec le style car les donnés affichées sont restées les mêmes. La seule chose que j'ai ajouter c'est un lien vers une page d'impression, qui vérifie en PHP si le commande possède une facture, auquel cas le lien redirige vers la page d'impression de la facture et dans le cas contraire vers la page d'impression de la commande (cf. Annexe Condition sur le lien d'impression de facture page \pageref{SL_print_condition}).
+	
+	\begin{center}
+	  \includegraphics[width=\textwidth]{images/SL_command_history.png} 
+	  \captionof{figure}{Page d'historique des commandes}
+	  \label{SL_command_history}
+	\end{center}
     
     	Ensuite nous rentrons dans le détail d'une commande précise, il s'agit d'une autre page, là aussi native de Magento. A l'intérieur de celle-ci nous trouvons les informations sur le client, son adresse de livraison et de facturation, les produits qui ont été commandé avec leur prix, leur quantité, ... La partie, produits commandés est restée relativement semblable au natif mise à part le style qui a été complètement revu. Là encore l'utilisation d'un tableau est le plus simple car il permet d'afficher clairement les données relatives à chaque produit. Je n'ai donc pas rencontré de difficulté majeure sur ce développement.
     
     	Sur cette même page j'ai repris la méthode développé et cité ci-dessus pour ajouter le lien vers la page d'impression avec les mêmes conditions. J'ai aussi ajouté un lien vers le suivi de la commande dans le cas où la commande a été expédiée. Pour ce faire j'utilise une méthode qui me permet de savoir si oui ou non la commande est expédiée et si tel est le cas alors je récupère son numéro de suivi que je concatène avec l'URL de suivi de colis et je l'affiche.
     
-    	Grâce au BO de Magento j'ai pu tester mes différents développement, car je peux simuler depuis celui-ci le passage d'une commande puis faire avancer les étapes du processus de préparation et de livraison. Ceci m' a permis de vérifier que les diverses conditions d'affichage étaient fonctionnelles sans avoir à réellement passer de commande, ce qui me rend indépendant du reste des développements par exemple le module de paiement, le tunnel de vente, qui peuvent, eux, ne pas être fonctionnelles à l'heure actuelle.
-    	\paragraph*{Création d'une nouvelle page « Fidélités » regroupant plusieurs blocs}
+    	Grâce au BO de Magento j'ai pu tester mes différents développement, car je peux simuler depuis celui-ci le passage d'une commande puis faire avancer les étapes du processus de préparation et de livraison. Ceci m' a permis de vérifier que les diverses conditions d'affichage étaient fonctionnelles sans avoir à réellement passer de commande, ce qui me rend indépendant du reste des développements par exemple le module de paiement, le tunnel de vente, qui peuvent, eux, ne pas être fonctionnelles à l'heure actuelle (cf. Annexe Illustration back-office client Magento page \pageref{SL_BO_customer}).
+	
+	\begin{center}
+	  \includegraphics[width=\textwidth]{images/SL_command_detail1.png} 
+	  \captionof{figure}{Détail d'une commande}
+	  \label{SL_command_detail1}
+	\end{center}
+    	\paragraph*{Création d'une nouvelle page « Fidélité » regroupant plusieurs blocs}
     	Dans un deuxième temps j'ai eu à créer une nouvelle page qui regroupe ce qui se faisait en trois pages distinctes auparavant, à savoir, une pour les points de fidélités, une pour les crédits magasins et une pour les chèques cadeaux. Dans un soucis de facilité et d'expérience utilisateur tout rassembler en un même endroit est beaucoup plus simple et clair, cette page offre en effet la possibilité de voir ses points de fidélités et leurs historiques, de voir les crédits magasins et d'accéder à la page liée comprenant l'historique là aussi et enfin d'ajouter un chèque cadeau. On trouve en plus sur cette page un bloc CMS mais j'en reparlerai dans la partie suivante.
     
-    	Je ne vais pas détaillé la création de chacune des parties de peur d'être redondant mais juste expliquer la trame générale du développement et prendre l'exemple de la partie points de fidélités. J'ai donc commencé par coder un controller capable d'intercepter l'URL customer/loyalty comme demandé dans les spécifications techniques. Pour ce faire je créé un nouveau fichier PHP dans lequel je déclare ma classe, ensuite dans la configuration du module j'ajoute un nouvel élément pour  « attraper » l'URL et utilisé la bonne classe. A cela il faut ajouter la création d'un layout custom dans lequel je déclare les blocs dont j'aurai besoin et préciser ce layout dans la configuration du module. Une fois cela terminé je me retrouve avec ma nouvelle page, mes différents blocs d'affichés provenant de l'existant, il ne me reste donc plus qu'à les modifier pour leur donner l'aspect et les fonctionnalités souhaitées.
+	\begin{center}
+	  \includegraphics[width=\textwidth]{images/SL_loyalty_page1.png} 
+	  \captionof{figure}{Nouvelle page Fidélité}
+	  \label{SL_loyalty_page1}
+	\end{center}
+	
+    	Je ne vais pas détaillé la création de chacune des parties de peur d'être redondant mais juste expliquer la trame générale du développement et prendre l'exemple de la partie points de fidélités. J'ai donc commencé par coder un controller capable d'intercepter l'URL customer/loyalty comme demandé dans les spécifications techniques. Pour ce faire je créé un nouveau fichier PHP dans lequel je déclare ma classe, ensuite dans la configuration du module j'ajoute un nouvel élément pour  « attraper » l'URL et utilisé la bonne classe. A cela il faut ajouter la création d'un layout custom dans lequel je déclare les blocs dont j'aurai besoin et préciser ce layout dans la configuration du module. Une fois cela terminé je me retrouve avec ma nouvelle page, mes différents blocs d'affichés provenant de l'existant, il ne me reste donc plus qu'à les modifier pour leur donner l'aspect et les fonctionnalités souhaitées (cf. Annexe Déclaration du controller custom loyalty page \pageref{SL_loyalty_controller}).
     
-    	Prenons l'exemple du bloc responsable des points de fidélité, dans la classe PHP de ce bloc en question je retrouve des méthodes me permettant d'effectuer diverses actions (je peux bien évidemment ajouter les miennes). A cela il faut ajouter un fichier de template pour ce bloc qui est lui responsable de l'affichage et c'est ici que nous allons retrouver la plupart du HTML ainsi qu'un peu de PHP notamment pour réaliser des boucles ou appeler les méthodes du bloc. C'est ensuite assez simple, je récupère les données dont j'ai besoin, le nombre de points de fidélités que possède le client puis je l'affiche. Cela aurait pu être aussi simple que cela mais le client avait une demande de design un peu particulier, avec une case pour chacun des chiffres du nombre. Ceci m'a obligé à développer une méthode qui sépare le nombre en chiffres puis si c'est un nombre à trois chiffres, tous les affichés, s'il n'en possède que deux ajouter un 0 avant le premier chiffre et ainsi de suite car le design comprenait trois cases.
+    	Prenons l'exemple du bloc responsable des points de fidélité, dans la classe PHP de ce bloc en question je retrouve des méthodes me permettant d'effectuer diverses actions (je peux bien évidemment ajouter les miennes). A cela il faut ajouter un fichier de template pour ce bloc qui est lui responsable de l'affichage et c'est ici que nous allons retrouver la plupart du HTML ainsi qu'un peu de PHP notamment pour réaliser des boucles ou appeler les méthodes du bloc. C'est ensuite assez simple, je récupère les données dont j'ai besoin, le nombre de points de fidélités que possède le client puis je l'affiche. Cela aurait pu être aussi simple que cela mais le client avait une demande de design un peu particulière, avec une case pour chacun des chiffres du nombre. Ceci m'a obligé à développer une méthode qui sépare le nombre en chiffres puis si c'est un nombre à trois chiffres, tous les affichés, s'il n'en possède que deux ajouter un 0 avant le premier chiffre et ainsi de suite car le design comprenait trois cases.
     
     	J'ai donc créé de A à Z une page custom en allant chercher des blocs existants puis modifier le template et le style de chacun. Ceci m'a permis de voir que le potentiel de Magento est vraiment grand et que l'on peut le modifier dans le moindre détail à condition d'y mettre le temps. J'ai pu compter sur l'aide de mes collaborateurs pour m'aiguiller sur les étapes de la création et ainsi acquérir les méthodes d'experts de la technologie.
     	\paragraph*{Intégration conditionnelle de blocs CMS}
@@ -463,6 +472,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neq
     	Enfin ma dernière mission de développement sur ce projet a été gérer tous les formulaires que l'on peut trouver au niveau du compte client. Cela va de la popin de connection lorsque l'on est sur une page et que l'on veut se connecter ou s'inscrire, au formulaire de modification des adresses de facturation et de livraison. Je n'ai pas réinventé la roue, j'ai réutilisé les styles déjà développés en début de projet par d'autres collaborateurs. Je me suis assuré que seuls les champs nécessaires s'affichaient, que la vérifications des données côtés utilisateur et serveur s'effectuaient bien et enfin harmoniser le style des pages car elles n'étaient pas toutes présentes dans les maquettes graphiques.
 	
 	J'ai eu l'occasion de refaire des scripts JavaScript et Prototype (un autre framework JavaScript utilisé sur Magento par default). Mon expérience passée sur les autres projets avec ce langage m'ont permis d'être efficace sur ce sujet ce qui m'a laissé du temps pour peaufiner le style des formulaires. 
+	
+	\begin{center}
+	  \includegraphics[width=\textwidth]{images/SL_account_information_form.png} 
+	  \captionof{figure}{Formulaire de modification des informations client}
+	  \label{SL_account_information_form}
+	\end{center}
     \subsection*{Bilan du projet}
     \addcontentsline{toc}{subsection}{Bilan du projet}%Ajout de l'élément dans le sommaire
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neque, at lacinia tellus rhoncus sed. Aliquam erat volutpat. Sed in facilisis dolor. Nam gravida purus vel ante auctor, non venenatis mauris scelerisque. Maecenas odio nunc, dapibus eu varius ac, dapibus non diam. Nam a ligula sit amet velit porta auctor. Vestibulum vel luctus eros. Sed vestibulum neque tristique, fringilla felis sed, pharetra dui. Nulla facilisi. Aliquam viverra velit nulla, ut placerat purus auctor vitae. Aenean vitae mauris tristique metus placerat ultrices vel ac magna. Vestibulum massa leo, faucibus nec tincidunt vitae, bibendum vel tortor. Aliquam erat volutpat.
@@ -516,6 +531,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neq
     \newpage
     
   \section*{Annexe Illustration header Darjeeling}
+  \addcontentsline{toc}{section}{Annexe Illustration header Darjeeling}%Ajout de l'élément dans le sommaire
   \begin{center}
       \includegraphics[width=\textwidth]{images/darjeeling_header.png} 
       \captionof{figure}{Header Darjeeling}
@@ -539,11 +555,69 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neq
   \newpage
   
   \section*{Annexe Illustration voir plus de produits Darjeeling}
+  \addcontentsline{toc}{section}{Annexe Illustration voir plus de produits Darjeeling}%Ajout de l'élément dans le sommaire
   \begin{center}
       \includegraphics[width=\textwidth]{images/darjeeling_see_more_products.png} 
       \captionof{figure}{Bloc pour voir plus de produits}
       \label{darjeeling_see_more_products}
   \end{center}
+  
+  \newpage
+  
+  \section*{Annexe Illustration dashboard Snowleader}
+  \addcontentsline{toc}{section}{Annexe Illustration dashboard Snowleader}%Ajout de l'élément dans le sommaire
+  \begin{center}
+      \includegraphics[width=\textwidth]{images/SL_dashboard_customer.png} 
+      \captionof{figure}{Dashboard client Snowleader}
+      \label{SL_dashboard_customer}
+  \end{center}
+  
+  \newpage
+  
+  \section*{Annexe Condition sur le lien d'impression de facture}
+  \addcontentsline{toc}{section}{Annexe Condition sur le lien d'impression de facture}%Ajout de l'élément dans le sommaire
+  \label{SL_print_condition}
+  \lstinputlisting[language=html, firstline=1, lastline=7]{SL_print_condition.html}
+  
+  \newpage
+  
+  \section*{Annexe Illustration back-office client Magento}
+  \addcontentsline{toc}{section}{Annexe Illustration back-office client Magento}%Ajout de l'élément dans le sommaire
+  \begin{center}
+      \includegraphics[width=\textwidth]{images/SL_BO_customer.png} 
+      \captionof{figure}{Back-office client Magento}
+      \label{SL_BO_customer}
+  \end{center}
+  
+  \newpage
+  
+  \section*{Annexe Déclaration du controller custom loyalty}
+  \addcontentsline{toc}{section}{Annexe Déclaration du controller custom loyalty}%Ajout de l'élément dans le sommaire
+  \label{SL_loyalty_controller}
+  \lstinputlisting[language=php, firstline=1, lastline=174]{SL_loyalty_controller.php}
+  
+  \newpage
+  
+  \section*{Annexe Architecture logicielle MVC (Modèle Vue Contrôleur}
+  \addcontentsline{toc}{section}{Annexe Architecture logicielle MVC (Modèle Vue Contrôleur}%Ajout de l'élément dans le sommaire
+  Le patron d'architecture logicielle modèle-vue-contrôleur, est un modèle destiné à répondre aux besoins des applications interactives en séparant les problématiques liées aux différents composants au sein de leur architecture respective.
+
+  \paragraph*{Modèle}
+  Le modèle représente le cœur (algorithmique) de l'application : traitements des données, interactions avec la base de données, etc. Il décrit les données manipulées par l'application. Il regroupe la gestion de ces données et est responsable de leur intégrité. La base de données sera l'un de ses composants. Le modèle comporte des méthodes standards pour mettre à jour ces données (insertion, suppression, changement de valeur). Il offre aussi des méthodes pour récupérer ces données. Les résultats renvoyés par le modèle ne s'occupent pas de la présentation. Le modèle ne contient aucun lien direct vers le contrôleur ou la vue. Sa communication avec la vue s'effectue au travers du patron Observateur.
+
+  Le modèle peut autoriser plusieurs vues partielles des données. Si par exemple le programme manipule une base de données pour les emplois du temps, le modèle peut avoir des méthodes pour avoir tous les cours d'une salle, tous les cours d'une personne ou tous les cours d'un groupe de TD.
+
+  \paragraph*{Vue}
+  Ce avec quoi l'utilisateur interagit se nomme précisément la vue. Sa première tâche est de présenter les résultats renvoyés par le modèle. Sa seconde tâche est de recevoir toute action de l'utilisateur (hover, clic de souris, sélection d'un bouton radio, cochage d'une case, entrée de texte, de mouvements, de voix, etc.). Ces différents événements sont envoyés au contrôleur. La vue n'effectue pas de traitement, elle se contente d'afficher les résultats des traitements effectués par le modèle et d'interagir avec l'utilisateur.
+
+  Plusieurs vues peuvent afficher des informations partielles ou non d'un même modèle. Par exemple si une application de conversion de base a un entier comme unique donnée, ce même entier peut être affiché de multiples façons (en texte dans différentes bases, bit par bit avec des boutons à cocher, avec des curseurs). La vue peut aussi offrir à l'utilisateur la possibilité de changer de vue.
+
+  \paragraph*{Contrôleur}
+  Le contrôleur prend en charge la gestion des événements de synchronisation pour mettre à jour la vue ou le modèle et les synchroniser. Il reçoit tous les événements de la vue et enclenche les actions à effectuer. Si une action nécessite un changement des données, le contrôleur demande la modification des données au modèle afin que les données affichées se mettent à jour. D'après le patron de conception observateur/observable, la vue est un « observateur » du modèle qui est lui « observable ». Certains événements de l'utilisateur ne concernent pas les données mais la vue. Dans ce cas, le contrôleur demande à la vue de se modifier. Le contrôleur n'effectue aucun traitement, ne modifie aucune donnée. Il analyse la requête du client et se contente d'appeler le modèle adéquat et de renvoyer la vue correspondant à la demande.
+
+  Par exemple, dans le cas d'une base de données gérant les emplois du temps des professeurs d'une école, une action de l'utilisateur peut être l'entrée (saisie) d'un nouveau cours. Le contrôleur ajoute ce cours au modèle et demande sa prise en compte par la vue. Une action de l'utilisateur peut aussi être de sélectionner une nouvelle personne pour visualiser tous ses cours. Ceci ne modifie pas la base des cours mais nécessite simplement que la vue s'adapte et offre à l'utilisateur une vision des cours de cette personne.
+  
+  \flushright\footnotesize\textit{Source Wikipedia}
   
 %Table des illustrations
 \listoffigures
