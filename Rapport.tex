@@ -465,11 +465,23 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neq
     	\paragraph*{Intégration conditionnelle de blocs CMS}
     	Une des parties du dashboard de l'espace client est composé d'une grille de blocs CMS et j'ai donc eu à la implémenter. Rien de très compliqué en soit puisqu'il m'a suffit de les contribuer dans le BO (dans un soucis de simplicité nous avons juste mis une image mais le client peut y intégrer ce qu'il veut notamment du code HTML). Puis de les déclarer dans le layout du dashboard en enfin de les appeler depuis le template. Une méthode native de Magento permet de faire cela juste en utilisant l'identifiant du bloc CMS créé dans le BO. 
 	
+	\captionof{figure}{Déclaration d'un layout avec l'appel à un bloc CMS}
+	\label{SL_layout_custom_loyalty}
+	\lstinputlisting[language=xml, firstline=1, lastline=24]{SL_layout_custom_loyalty.xml}
+	
 	La seule complexité à laquelle j'ai du faire face est que le client souhaitait faire apparaître un bloc différent dans deux cas, quand le client est premium et quand il est abonné à la newsletter. J'ai donc créé deux blocs CMS différents dans le BO pour chacun de ces cas. Puis j'ai codé une méthode qui vérifie si le client est premium, auquel cas grâce à une méthode native, on modifie le bloc initialement déclaré par default dans le layout et on le remplace par celui du client premium. De la même manière, j'ai créé une méthode pour les abonnés à la newsletter.
 	
+	\captionof{figure}{Appel du bloc CMS dans un template}
+	\label{SL_block_CMS_call_in_template}
+	\lstinputlisting[language=html, firstline=1, lastline=12]{SL_block_CMS_call_in_template.html}
+	
+	\captionof{figure}{Méthode PHP pour appeler le bon bloc CMS si le client est premium}
+	\label{SL_method_to_select_CMS_block}
+	\lstinputlisting[language=php, firstline=1, lastline=14]{SL_method_to_select_CMS_block.php}
+		
 	Le principal avantage de cette partie est de m'avoir fait prendre en main la gestion des blocs CMS qui sont souvent présents dans les différents projets car ils permettent au client de contribuer du code eux mêmes et sont donc très souple. J'ai donc appris à les intégrer et à les conditionner, mais aussi à les manipuler depuis les BO qui restait jusqu'à présent un peu flou pour moi car je ne suis pas souvent amené à le configurer.
     	\paragraph*{Gestion des informations clients}
-    	Enfin ma dernière mission de développement sur ce projet a été gérer tous les formulaires que l'on peut trouver au niveau du compte client. Cela va de la popin de connection lorsque l'on est sur une page et que l'on veut se connecter ou s'inscrire, au formulaire de modification des adresses de facturation et de livraison. Je n'ai pas réinventé la roue, j'ai réutilisé les styles déjà développés en début de projet par d'autres collaborateurs. Je me suis assuré que seuls les champs nécessaires s'affichaient, que la vérifications des données côtés utilisateur et serveur s'effectuaient bien et enfin harmoniser le style des pages car elles n'étaient pas toutes présentes dans les maquettes graphiques.
+    	Enfin ma dernière mission de développement sur ce projet a été gérer tous les formulaires que l'on peut trouver au niveau du compte client. Cela va de la popin de connection lorsque l'on est sur une page et que l'on veut se connecter ou s'inscrire, au formulaire de modification des adresses de facturation et de livraison. Je n'ai pas réinventé la roue, j'ai réutilisé les styles déjà développés en début de projet par d'autres collaborateurs. Je me suis assuré que seuls les champs nécessaires s'affichaient, que la vérifications des données côtés utilisateur et serveur s'effectuaient bien et enfin harmoniser le style des pages car elles n'étaient pas toutes présentes dans les maquettes graphiques (cf. Annexe Illustration formulaire de modification des informations personnelles page \pageref{SL_account_information_form}).
 	
 	J'ai eu l'occasion de refaire des scripts JavaScript et Prototype (un autre framework JavaScript utilisé sur Magento par default). Mon expérience passée sur les autres projets avec ce langage m'ont permis d'être efficace sur ce sujet ce qui m'a laissé du temps pour peaufiner le style des formulaires. 
 	
@@ -595,6 +607,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neq
   \addcontentsline{toc}{section}{Annexe Déclaration du controller custom loyalty}%Ajout de l'élément dans le sommaire
   \label{SL_loyalty_controller}
   \lstinputlisting[language=php, firstline=1, lastline=174]{SL_loyalty_controller.php}
+  
+  \newpage
+  
+  \section*{Annexe Illustration formulaire de modification des informations personnelles}
+  \addcontentsline{toc}{section}{Annexe Illustration formulaire de modification des informations personnelles}%Ajout de l'élément dans le sommaire
+  \begin{center}
+      \includegraphics[width=\textwidth]{images/SL_account_information_form.png} 
+      \captionof{figure}{Formulaire de modification des informations personnelles}
+      \label{SL_account_information_form}
+  \end{center}
   
   \newpage
   
