@@ -458,8 +458,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neq
 	\end{center}
 	
     	Je ne vais pas détaillé la création de chacune des parties de peur d'être redondant mais juste expliquer la trame générale du développement et prendre l'exemple de la partie points de fidélités. J'ai donc commencé par coder un controller capable d'intercepter l'URL customer/loyalty comme demandé dans les spécifications techniques. Pour ce faire je créé un nouveau fichier PHP dans lequel je déclare ma classe, ensuite dans la configuration du module j'ajoute un nouvel élément pour  « attraper » l'URL et utilisé la bonne classe. A cela il faut ajouter la création d'un layout custom dans lequel je déclare les blocs dont j'aurai besoin et préciser ce layout dans la configuration du module. Une fois cela terminé je me retrouve avec ma nouvelle page, mes différents blocs d'affichés provenant de l'existant, il ne me reste donc plus qu'à les modifier pour leur donner l'aspect et les fonctionnalités souhaitées (cf. Annexe Déclaration du controller custom loyalty page \pageref{SL_loyalty_controller}).
-    
-    	Prenons l'exemple du bloc responsable des points de fidélité, dans la classe PHP de ce bloc en question je retrouve des méthodes me permettant d'effectuer diverses actions (je peux bien évidemment ajouter les miennes). A cela il faut ajouter un fichier de template pour ce bloc qui est lui responsable de l'affichage et c'est ici que nous allons retrouver la plupart du HTML ainsi qu'un peu de PHP notamment pour réaliser des boucles ou appeler les méthodes du bloc. C'est ensuite assez simple, je récupère les données dont j'ai besoin, le nombre de points de fidélités que possède le client puis je l'affiche. Cela aurait pu être aussi simple que cela mais le client avait une demande de design un peu particulière, avec une case pour chacun des chiffres du nombre. Ceci m'a obligé à développer une méthode qui sépare le nombre en chiffres puis si c'est un nombre à trois chiffres, tous les affichés, s'il n'en possède que deux ajouter un 0 avant le premier chiffre et ainsi de suite car le design comprenait trois cases.
+	
+	Prenons l'exemple du bloc responsable des points de fidélité, dans la classe PHP de ce bloc en question je retrouve des méthodes me permettant d'effectuer diverses actions (je peux bien évidemment ajouter les miennes). A cela il faut ajouter un fichier de template pour ce bloc qui est lui responsable de l'affichage et c'est ici que nous allons retrouver la plupart du HTML ainsi qu'un peu de PHP notamment pour réaliser des boucles ou appeler les méthodes du bloc. C'est ensuite assez simple, je récupère les données dont j'ai besoin, le nombre de points de fidélités que possède le client puis je l'affiche. Cela aurait pu être aussi simple que cela mais le client avait une demande de design un peu particulière, avec une case pour chacun des chiffres du nombre. Ceci m'a obligé à développer une méthode qui sépare le nombre en chiffres puis si c'est un nombre à trois chiffres, tous les affichés, s'il n'en possède que deux ajouter un 0 avant le premier chiffre et ainsi de suite car le design comprenait trois cases.
     
     	J'ai donc créé de A à Z une page custom en allant chercher des blocs existants puis modifier le template et le style de chacun. Ceci m'a permis de voir que le potentiel de Magento est vraiment grand et que l'on peut le modifier dans le moindre détail à condition d'y mettre le temps. J'ai pu compter sur l'aide de mes collaborateurs pour m'aiguiller sur les étapes de la création et ainsi acquérir les méthodes d'experts de la technologie.
     	\paragraph*{Intégration conditionnelle de blocs CMS}
@@ -492,7 +492,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neq
 	\end{center}
     \subsection*{Bilan du projet}
     \addcontentsline{toc}{subsection}{Bilan du projet}%Ajout de l'élément dans le sommaire
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neque, at lacinia tellus rhoncus sed. Aliquam erat volutpat. Sed in facilisis dolor. Nam gravida purus vel ante auctor, non venenatis mauris scelerisque. Maecenas odio nunc, dapibus eu varius ac, dapibus non diam. Nam a ligula sit amet velit porta auctor. Vestibulum vel luctus eros. Sed vestibulum neque tristique, fringilla felis sed, pharetra dui. Nulla facilisi. Aliquam viverra velit nulla, ut placerat purus auctor vitae. Aenean vitae mauris tristique metus placerat ultrices vel ac magna. Vestibulum massa leo, faucibus nec tincidunt vitae, bibendum vel tortor. Aliquam erat volutpat.
+    Ce dernier projet fait vraiment office de bilan pour mon stage car il m'as permis de réutiliser toutes les connaissances techniques acquises aucours de ces six mois. En plus j'ai pu apprendre et utiliser des fonctionnalités plus avancés de Magento, donc j'ai encore une fois continuer d'enrichir mon bagage techniques dans le domaine du développement Web. Le fait qu'il s'agisse d'un gros projet m'a donné l'occasion d'être plus indépendant sur la partie du site qu'il m'acquitait de développer. Bien entendu je pouvais tout de même compter sur les autres membres du projet pour venir me conseiller en cas de difficulté.
+    
+    Le fait d'arriver en cours de projet a finalement été intéressant car cela m'a obligé à bien communiquer avec le reste de l'équipe pour être sûr de ne pas réinventer la roue mais plutôt de réutiliser d'éventuels codes déjà réalisé précédemment. De plus le chef de projet réalise des réunions d'équipe régulièrement ce qui permet non seulement de savoir où en est l'avancement du projet mais aussi d'être au courant de la répartition des tâches au différents membres du projet. Ainsi lorsque l'on a une question sur un sujet on sait rapidement à qui s'adresser. 
+    
+    A l'heure où j'écris ces lignes le projet n'est pas encore fini mais il est en bonne voie et devrait être livrer avec deux semaines de retard. En effet, pour diverses raison l'avancement a pris du retard et les responsables du projet en accord avec le client ont décidé de reculer la date de livraison. Encore une fois la principale difficulté est donc, le temps. Pour ma part cette « pression » de planning m'a obligé à être encore plus efficace mais c'est une des réalités du métier il est donc intéressant d'y faire face. 
+    
+    Finalement un des intérêts principal de ce projet a été la réalisation de code de qualité et indépendant, associé à une bonne documentation. Ceci permet aux autres collaborateurs de récupérer le code si besoin et donc de gagner un temps précieux. Afin de vérifier la qualité du code, le chef de projet technique a mis en place un système que l'on intègre à notre IDE et qui vérifie en temps réel que notre code respecte les conventions fixées (indentation, retour à la ligne, commentaires, ...). Ce chef de projet étant un expert sur la technologie, il vérifie régulièrement le code commité et peu nous faire des retours personnalisés quand à la qualité et l'efficacité de notre code. 
    
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %
@@ -512,10 +518,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neq
 \chapter*{Annexes}
 \thispagestyle{\chead{}}
 \addcontentsline{toc}{chapter}{Annexes}%Ajout de l'élément dans le sommaire
+  
   \section*{Annexe Code CSS simulateur d'épargne}
   \addcontentsline{toc}{section}{Annexe Code CSS simulateur d'épargne}%Ajout de l'élément dans le sommaire
   \label{code_CSS_simulateur_d_epargne}
   \lstinputlisting[language=HTML, firstline=1, lastline=68]{saving_simulator_html5.html}
+  \captionof{figure}{Code CSS simulateur d'épargne}
   
     \newpage
   
@@ -523,6 +531,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neq
   \addcontentsline{toc}{section}{Annexe Transmission de données d'un formulaire}%Ajout de l'élément dans le sommaire
   \label{transmission_de_donnees_d_un_formulaire}
   \lstinputlisting[language=HTML, firstline=1, lastline=63]{question_conditionnelle_2.html}
+  \captionof{figure}{Transmission de données d'un formulaire}
   
     \newpage
   
@@ -556,6 +565,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neq
   \addcontentsline{toc}{section}{Annexe Installeur Magento pour ajouter un attribut au BO}%Ajout de l'élément dans le sommaire
   \label{installeur_Magento_pour_ajouter_un_attribut_au_BO}
   \lstinputlisting[language=php, firstline=1, lastline=51]{installer_darjeeling.php}
+  \captionof{figure}{Installeur Magento pour ajouter un attribut au BO}
   
     \newpage
   
@@ -563,6 +573,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neq
   \addcontentsline{toc}{section}{Annexe Script jQuery d'ajustement d'une info bulle}%Ajout de l'élément dans le sommaire
   \label{script_jQuery_d_ajustement_d_une_info_bulle}
   \lstinputlisting[language=html, firstline=1, lastline=31]{script_tooltip.html}
+  \captionof{figure}{Script jQuery d'ajustement d'une info bulle}
   
   \newpage
   
@@ -590,6 +601,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neq
   \addcontentsline{toc}{section}{Annexe Condition sur le lien d'impression de facture}%Ajout de l'élément dans le sommaire
   \label{SL_print_condition}
   \lstinputlisting[language=html, firstline=1, lastline=7]{SL_print_condition.html}
+  \captionof{figure}{Condition sur le lien d'impression de facture}
   
   \newpage
   
@@ -607,6 +619,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neq
   \addcontentsline{toc}{section}{Annexe Déclaration du controller custom loyalty}%Ajout de l'élément dans le sommaire
   \label{SL_loyalty_controller}
   \lstinputlisting[language=php, firstline=1, lastline=174]{SL_loyalty_controller.php}
+  \captionof{figure}{Déclaration du controller custom loyalty}
   
   \newpage
   
@@ -639,10 +652,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra sem neq
 
   Par exemple, dans le cas d'une base de données gérant les emplois du temps des professeurs d'une école, une action de l'utilisateur peut être l'entrée (saisie) d'un nouveau cours. Le contrôleur ajoute ce cours au modèle et demande sa prise en compte par la vue. Une action de l'utilisateur peut aussi être de sélectionner une nouvelle personne pour visualiser tous ses cours. Ceci ne modifie pas la base des cours mais nécessite simplement que la vue s'adapte et offre à l'utilisateur une vision des cours de cette personne.
   
-  \flushright\footnotesize\textit{Source Wikipedia}
+  \begin{flushright}
+    \footnotesize\textit{Source Wikipedia}
+  \end{flushright}
   
 %Table des illustrations
 \listoffigures
 \thispagestyle{\chead{}}
+\addcontentsline{toc}{chapter}{Table des illustrations}%Ajout de l'élément dans le sommaire
 
 \end{document}

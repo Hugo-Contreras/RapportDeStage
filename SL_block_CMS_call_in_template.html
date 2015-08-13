@@ -1,0 +1,12 @@
+<div class="box-premium">
+    <?php if ($this->isPremium()) : ?>
+    <div class="bloc-cms grid-dashboard-bloc-cms">
+        <?php echo $this->getCmsBlockPremiumHtml(); ?>
+    </div>
+    <?php
+    else : ?>
+        <div class="bloc-cms grid-dashboard-bloc-cms">
+            <?php echo $this->getChildHtml('customer_become_premium'); ?>
+        </div>
+    <?php endif?>
+</div>

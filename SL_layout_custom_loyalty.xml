@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <customer_loyalty_index>
+        <update handle="customer_account"/>
+        <reference name="content">
+            <block type="core/template" name="customerloyalty.wrapper" template="customerloyalty/wrapper.phtml" translate="label">
+                <block type="enterprise_customerbalance/account_balance" name="balance" template="customerbalance/account/balance.phtml" before="-" />
+                <block type="enterprise_giftcardaccount/account_redeem" name="redeem" template="giftcardaccount/account/redeem.phtml" />
+                <block type="enterprise_reward/customer_reward" name="customer.reward" template="reward/customer/reward.phtml">
+                    <block type="enterprise_reward/customer_reward_info" name="customer.reward.info" template="reward/customer/reward/info.phtml"/>
+                    <block type="snowleader_reward/customer_reward_premium" name="customer.reward.premium" template="reward/customer/reward/premium.phtml">
+                        <block type="cms/block" name="customer.reward.premium.customer_become_premium" as="customer_become_premium">
+                            <action method="setBlockId">
+                                <block_id>customer_become_premium</block_id>
+                            </action>
+                        </block>
+                    </block>
+                    <block type="enterprise_reward/customer_reward_history" name="customer.reward.history" template="reward/customer/reward/history.phtml"/>
+                    <block type="enterprise_reward/customer_reward_subscription" name="customer.reward.subscription" template="reward/customer/reward/subscription.phtml"/>
+                </block>
+            </block>
+        </reference>
+    </customer_loyalty_index>
+</layout>
