@@ -13,7 +13,7 @@ $installer->startSetup();
 $entityTypeId     = $installer->getEntityTypeId('catalog_category');
 $attributeSetId   = $installer->getDefaultAttributeSetId($entityTypeId);
 $attributeGroupId = $installer->getDefaultAttributeGroupId($entityTypeId, $attributeSetId);
-
+// Declaration of the needed attribute with data
 $installer->addAttribute('catalog_category', 'promo_img_link',  array(
     'type'     => 'varchar',
     'label'    => 'Link for promotion image',
@@ -25,7 +25,7 @@ $installer->addAttribute('catalog_category', 'promo_img_link',  array(
 ));
 
 $attributeId = $installer->getAttributeId($entityTypeId, 'promo_img_link');
-
+// Insertion in the database
 $installer->run("
 INSERT INTO `{$installer->getTable('catalog_category_entity_varchar')}`
 (`entity_type_id`, `attribute_id`, `entity_id`, `value`)

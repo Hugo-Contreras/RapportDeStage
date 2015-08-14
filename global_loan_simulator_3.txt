@@ -1,11 +1,11 @@
-bfm.conf (port 80)
+bfm.conf (port 80) // Configuration for HTTP request
 
 RewriteEngine On
 RewriteCond !=on
 RewriteRule ^/Simulation-Pret-Infirmiere$ https://{SERVER_NAME}/Simulation-Pret-Infirmiere [NC,R=301,L]
 RewriteRule ^/Simulation-Pret-Militaire$ https://%{SERVER_NAME}/Simulation-Pret-Militaire [NC,R=301,L]
 
-bfm-ssl.conf (port 443)
+bfm-ssl.conf (port 443) // Configuration for HTTPS request
 
 RewriteEngine On
 RewriteCond !.*bfm.*$

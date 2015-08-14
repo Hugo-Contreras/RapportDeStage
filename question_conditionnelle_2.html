@@ -5,10 +5,10 @@
         var currentvalue = null;
         jQuery('input').focus(function(){
             currentinput = jQuery(this).prev('label').text();
-        });
+        }); // When the user select an input we catch the corresponding label value
         jQuery('textarea').focus(function(){
             currentarea = jQuery(this).prev('label').text();
-        });
+        }); // When the user select a text-area we catch the corresponding label value
         jQuery('.simple-text + input').blur(function(){
             currentvalue = jQuery(this).val();
             jQuery('.hidden label').each(function() {
@@ -16,7 +16,7 @@
                     jQuery(this).next('input').val(currentvalue);
                 }
             });
-        });
+        }); // When the user change of input we catch the value and we put it in the hidden input corresponding to the other form linked
         jQuery('.text-area + textarea').blur(function(){
             currentvalue = jQuery(this).val();
             jQuery('.hidden label').each(function() {
@@ -24,13 +24,13 @@
                     jQuery(this).next('textarea').val(currentvalue);
                 }
             });
-        });
+        }); // When the user change of text-area we catch the value and we put it in the hidden text-area corresponding to the other form linked
         jQuery('.date + input.date-question').blur(function(){
             jQuery('.hidden .date + input.date-question').val(jQuery(this).val());
-        });
+        }); // Idem for date
         jQuery('.email + input').blur(function(){
             jQuery('.hidden .email + input').val(jQuery(this).val());
-        });
+        }); // Idem for email
         jQuery('.numeric + input.input_numeric').blur(function(){
             currentvalue = jQuery(this).val();
             jQuery('.hidden label').each(function() {
@@ -38,7 +38,7 @@
                     jQuery(this).next('input').val(currentvalue);
                 }
             });
-        });
+        }); // Idem for numeric attribute
         jQuery('.civility + ul input').blur(function(){
             if ( jQuery('.hidden .civility + ul input').length != 0 ) {
                 if (jQuery(this).val() == '1')
@@ -49,10 +49,10 @@
             } else {
                 jQuery('.hidden .civility + ul input').val(jQuery(this).val());
             }
-        });
+        }); // Idem for civility
         jQuery('input').trigger("focus");
         jQuery('textarea').trigger("focus");
-        jQuery('#existing_product_oui').bind('click', function() {
+        jQuery('#existing_product_oui').bind('click', function() {  // On click to the question for existing product we display a popin and redirect to the other form but we keep the actual data
             jQuery('input').trigger("focus");
             jQuery('textarea').trigger("focus");
             alert("{/literal}{$node.data_map.popin_message.content}{literal}");

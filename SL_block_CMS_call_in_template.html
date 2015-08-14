@@ -1,12 +1,12 @@
 <div class="box-premium">
-    <?php if ($this->isPremium()) : ?>
+    <?php if ($this->isPremium()) : ?> // If the customer is premium we call the custom method to display the needed bock and not the default one
     <div class="bloc-cms grid-dashboard-bloc-cms">
         <?php echo $this->getCmsBlockPremiumHtml(); ?>
     </div>
     <?php
     else : ?>
-        <div class="bloc-cms grid-dashboard-bloc-cms">
-            <?php echo $this->getChildHtml('customer_become_premium'); ?>
+        <div class="bloc-cms grid-dashboard-bloc-cms"> 
+            <?php echo $this->getChildHtml('customer_become_premium'); ?> // Method to call a block and we display it
         </div>
     <?php endif?>
 </div>

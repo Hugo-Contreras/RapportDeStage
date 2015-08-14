@@ -4,7 +4,7 @@ jQuery(document).ready(function () {
         jQuery( this ).attr("title", '<?php echo $this->__("Add to my cravings"); ?>');
     });
     <?php if ($this->helper('customer')->isLoggedIn()):?>
-        <?php $_wishlist = Mage::helper('darjeelingdesign/customer')->getCustomerWishlistItemsToJavascript(); ?>
+        <?php $_wishlist = Mage::helper('darjeelingdesign/customer')->getCustomerWishlistItemsToJavascript(); ?> // Recuperation of wished products
         <?php if(!empty($_wishlist)): ?>
             /* Display Wishlist Items */
             <?php $wishlist = explode(",",$_wishlist); ?>
@@ -20,7 +20,7 @@ jQuery(document).ready(function () {
     });
 });
 
-jQuery( '.express-wishlist input.add-to-wishlist').click( function() {
+jQuery( '.express-wishlist input.add-to-wishlist').click( function() { // Different message in the tooltip on click
     if( jQuery( this).hasClass( 'wished' ) ) {
         jQuery( this ).tooltipster('content','<?php echo $this->__("Add to my cravings"); ?>');
     }
