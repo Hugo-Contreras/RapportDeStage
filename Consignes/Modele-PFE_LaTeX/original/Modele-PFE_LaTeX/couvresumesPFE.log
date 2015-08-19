@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.19)  18 AUG 2015 14:13
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.19)  19 AUG 2015 10:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -355,13 +355,24 @@ Overfull \vbox (10.73743pt too high) detected at line 58
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--58
+Underfull \hbox (badness 1184) in paragraph at lines 58--58
+\T1/cmss/m/n/10.95 Web tech-no-lo-gies, I rea-li-zed my fi-nal in-ter-n-ship at
 
  []
 
 
-Underfull \hbox (badness 1173) in paragraph at lines 58--58
-\T1/cmss/m/n/10.95 As a web de-ve-lo-per in Smile Sud-Ouest, I star-ted
+Underfull \hbox (badness 2521) in paragraph at lines 58--58
+\T1/cmss/m/n/10.95 is forty em-ployees, mostly en-gi-neers, who de-ve-lop
+ []
+
+
+Underfull \hbox (badness 1194) in paragraph at lines 58--58
+\T1/cmss/m/n/10.95 Web ap-pli-ca-tions using open source CMS (eZ Pu-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--58
+
  []
 
 
@@ -411,13 +422,13 @@ Here is how much of TeX's memory you used:
  6750 multiletter control sequences out of 15000+600000
  12097 words of font info for 33 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 41i,12n,23p,824b,312s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,12n,23p,827b,312s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf/fonts/t
 ype1/public/cm-super/sfss1095.pfb></usr/share/texmf/fonts/type1/public/cm-super
 /sfsx1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1440.pfb></usr/
 share/texmf/fonts/type1/public/cm-super/sfsx2488.pfb>
-Output written on couvresumesPFE.pdf (2 pages, 1242803 bytes).
+Output written on couvresumesPFE.pdf (2 pages, 1242779 bytes).
 PDF statistics:
  38 PDF objects out of 1000 (max. 8388607)
  23 compressed objects within 1 object stream
