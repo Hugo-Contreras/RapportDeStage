@@ -15,4 +15,8 @@ http://win-bfm-new.clients.smile.fr/Vente-Flash-BFM-Liberte/Vente-Flash-Simulate
 http://win-bfm-new.clients.smile.fr/Landing-Pages/fonction-publique
 http://win-bfm-new.clients.smile.fr/Landing-Pages/hospitalier
 http://win-bfm-new.clients.smile.fr/Landing-Pages/militaire
-
+Htaccess
+login: snow-uat
+password: AiTh2vei
+http://snow-vip-pp.smile-hosting.fr/
+http://www.darjeeling.fr/
