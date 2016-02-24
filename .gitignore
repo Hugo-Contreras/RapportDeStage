@@ -4,3 +4,5 @@ Rapport.lof
 Rapport.log
 Rapport.tex.backup
 Rapport.toc
+.DS_Store
+*.log
